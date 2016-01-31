@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Jekyll Blogging and Disqus"
+title:  "Jekyll Blog"
 comments: true
 date:   2016-01-28 08:15:23 -0700
 author: Elana Kopelevich
