@@ -1,10 +1,10 @@
 # Site settings
 title: Reason About
 email: info@reasonabout.co
-description: A blog that brings fresh insights and information from 30 web devs together in one space.
-url: "http://reasonabout.co"
+description: A blog that brings fresh insights from a bunch of curious web devs together in one space.
+url: http://reasonabout.co
 twitter_username: reasonabout_co
-github_username:  reasonabout
+sidebar_image: assets/cover.jpg
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet

@@ -109,11 +109,6 @@ header {
   }
 }
 
-header a {
-  color: #fff;
-  text-decoration: none;
-}
-
 header:after {
   content: "";
   position: absolute;
@@ -188,7 +183,7 @@ header .home_button {
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   text-align: center;
-  background-image: url(../assets/icon_home.png);
+  background-image: url(../images/icon_home.png);
   background-position: center;
   background-repeat: no-repeat;
   padding: 20px;
@@ -198,7 +193,7 @@ header .home_button {
 
 header .home_button:hover {
   background: #fff;
-  background-image: url(../assets/icon_home_hover.png);
+  background-image: url(../images/icon_home_hover.png);
   background-position: center;
   background-repeat: no-repeat;
   color: #ce2323;
@@ -242,14 +237,14 @@ header ul.meta li span {
     right: 10px;
     bottom: 10px;
     left: 10px;
-  }
+  }  
 }
 
 @media screen and (max-width: 960px){
   .pagination {
     margin-top: 40px;
     padding: 0 10px;
-  }
+  }  
 }
 
 .pagination:after {
@@ -316,6 +311,7 @@ article p {
 article li {
   margin-left: 3em;
   margin-bottom: 9px;
+  list-style-type: disc;
 }
 
 @media (max-width: 960px) {

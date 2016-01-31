@@ -2,179 +2,104 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reason About</title>
-    <description>A blog that brings fresh insights and information from 30 web devs together in one space.</description>
+    <description>A blog that brings fresh insights from a bunch of curious web devs together in one space.</description>
     <link>http://reasonabout.co/</link>
     <atom:link href="http://reasonabout.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 Jan 2016 17:56:17 -0700</pubDate>
-    <lastBuildDate>Sat, 30 Jan 2016 17:56:17 -0700</lastBuildDate>
-    <generator>Jekyll v3.1.0</generator>
+    <pubDate>Sun, 31 Jan 2016 12:55:14 -0700</pubDate>
+    <lastBuildDate>Sun, 31 Jan 2016 12:55:14 -0700</lastBuildDate>
+    <generator>Jekyll v3.1.1</generator>
     
       <item>
         <title>Jekyll Blog</title>
         <description>&lt;p&gt;Creating this blog led me to learn a few things about how to set up a site with Jekyll. It only makes sense that I get meta with my first proper contribution and tell you how I did it.&lt;/p&gt;
 
-&lt;p&gt;In this post, I’ll cover:&lt;/p&gt;
+&lt;p&gt;In this post, I&amp;#39;ll cover:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Installing Jekyll and starting a project&lt;/li&gt;
-  &lt;li&gt;Navigating around a Jekyll project&lt;/li&gt;
-  &lt;li&gt;Adding a post&lt;/li&gt;
+&lt;li&gt;Installing Jekyll and starting a project&lt;/li&gt;
+&lt;li&gt;Navigating around a Jekyll project&lt;/li&gt;
+&lt;li&gt;Adding a post&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;getting-started-with-jekyll&quot;&gt;Getting Started with Jekyll&lt;/h3&gt;
+&lt;h2&gt;Getting Started with Jekyll&lt;/h2&gt;
 
 &lt;p&gt;Here are all five of the steps to setting up a local Jekyll site:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;If you don’t have Ruby installed, install Ruby: &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install ruby&lt;/code&gt; (OSX)&lt;/li&gt;
-  &lt;li&gt;Install Jekyll: &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jekyll&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Create a Jekyll project locally: &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new my-awesome-site&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Navigate into your new project: &lt;code class=&quot;highlighter-rouge&quot;&gt;cd my-awesome-site&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Serve your project locally: &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;If you don&amp;#39;t have Ruby installed, install Ruby: &lt;code&gt;brew install ruby&lt;/code&gt; (OSX)&lt;/li&gt;
+&lt;li&gt;Install Jekyll: &lt;code&gt;gem install jekyll&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a Jekyll project locally: &lt;code&gt;jekyll new my-awesome-site&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Navigate into your new project: &lt;code&gt;cd my-awesome-site&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Serve your project locally: &lt;code&gt;jekyll serve&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;You will find your site running at: &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:4000&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You will find your site running at: &lt;code&gt;http://localhost:4000&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;I’m hosting this site on GitHub pages and redirecting to a custom domain. I’m not going to cover that today, but I will in a future post.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I&amp;#39;m hosting this site on GitHub pages and redirecting to a custom domain. I&amp;#39;m not going to cover that today, but I will in a future post.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;navigating-around-jekyll&quot;&gt;Navigating around Jekyll&lt;/h3&gt;
+&lt;h2&gt;Navigating around Jekyll&lt;/h2&gt;
 
 &lt;p&gt;This is what your project might look like:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/jekyll-structure.png&quot; alt=&quot;Jekyll Site Structure&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/jekyll-structure.png&quot; alt=&quot;Jekyll Site Structure&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Keep three things in mind as you start working in your Jekyll project:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;The _site directory is your generated public directory. You generally don’t want to mess with generated files.&lt;/p&gt;
+&lt;p&gt;The _site directory is your generated public directory. You generally don&amp;#39;t want to mess with generated files.&lt;/p&gt;
 
-&lt;p&gt;Okay, now for the rest of the project…&lt;/p&gt;
+&lt;p&gt;Okay, now for the rest of the project...&lt;/p&gt;
 
 &lt;p&gt;The site generator creates a few very useful directories and files for you:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;_config.yml - This file contains basic info about your site. Open it up and fill in the blanks. You won’t need to edit this one often.&lt;/li&gt;
-  &lt;li&gt;_posts directory - This is where you add your posts as markup files. I’ll cover that in more detail in the next section&lt;/li&gt;
-  &lt;li&gt;about.md - This is what is sounds like. Fill this page in with the content for your about page.&lt;/li&gt;
+&lt;li&gt;_config.yml - This file contains basic info about your site. Open it up and fill in the blanks. You won&amp;#39;t need to edit this one often.&lt;/li&gt;
+&lt;li&gt;_posts directory - This is where you add your posts as markup files. I&amp;#39;ll cover that in more detail in the next section&lt;/li&gt;
+&lt;li&gt;about.md - This is what is sounds like. Fill this page in with the content for your about page.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;adding-a-post&quot;&gt;Adding a Post&lt;/h3&gt;
+&lt;h2&gt;Adding a Post&lt;/h2&gt;
 
-&lt;p&gt;If you’re used to blogging with a rich text editor, you will need to shift your workflow a bit. If you feel uncomfortable whenever you have to leave your text editor or terminal, then this is the platform for you. Jekyll posts are just markup. I’m using markdown, so I’ll focus on that, but you can use also HTML or textile (with the proper extensions).&lt;/p&gt;
+&lt;p&gt;If you&amp;#39;re used to blogging with a rich text editor, you will need to shift your workflow a bit. If you feel uncomfortable whenever you have to leave your text editor or terminal, then this is the platform for you. Jekyll posts are just markup. I&amp;#39;m using markdown, so I&amp;#39;ll focus on that, but you can use also HTML or textile (with the proper extensions).&lt;/p&gt;
 
 &lt;p&gt;Writing a blog on a Jekyll site is as easy as adding a markup file to the _posts directory.&lt;/p&gt;
 
 &lt;p&gt;A couple things to keep in mind:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;em&gt;Your file name matters!&lt;/em&gt; Start with the date in kebab case (YYYY-MM-DD) and continue with the file name, also connected with dashes. It should look like this:&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
-
-    &lt;p&gt;For example:&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2016-01-27-ek-welcome-to-reason-about.md&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Also, I’m not sure if I mentioned this before, but you should definitely, never ever edit anything in the _site directory&lt;/p&gt;
-  &lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Your file name matters!&lt;/em&gt; Start with the date in kebab case (YYYY-MM-DD) and continue with the file name, also connected with dashes. It should look like this:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;inside-the-file&quot;&gt;Inside the file:&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;The first thing in every one of your posts will be “YAML front matter”. This is the metadata about the post and it’s really important. This post’s front matter looks like this:&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/yaml-front-matter.png&quot; alt=&quot;YAML front matter&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;2016-01-27-ek-welcome-to-reason-about.md&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Also, I&amp;#39;m not sure if I mentioned this before, but you should definitely, never ever edit anything in the _site directory&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Inside the file:&lt;/h2&gt;
+
+&lt;p&gt;The first thing in every one of your posts will be &amp;quot;YAML front matter&amp;quot;. This is the metadata about the post and it&amp;#39;s really important. This post&amp;#39;s front matter looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/yaml-front-matter.png&quot; alt=&quot;YAML front matter&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;When you create a new post, make sure to include this section with the appropriate data.&lt;/p&gt;
 
-&lt;h4 id=&quot;adding-images-and-documents&quot;&gt;Adding images and documents:&lt;/h4&gt;
+&lt;h2&gt;Adding images and documents:&lt;/h2&gt;
 
-&lt;p&gt;When you set up a file, you won’t have a default place to store images and files, but the Jekyll docs recommend creating an assets folder. You will need to manually create a file structure inside of it to keep things organized. Our assest folder is organized by contributor, then year, then month.&lt;/p&gt;
+&lt;p&gt;When you set up a file, you won&amp;#39;t have a default place to store images and files, but the Jekyll docs recommend creating an assets folder. You will need to manually create a file structure inside of it to keep things organized. Our asset folder is organized by contributor, then year, then month.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/asset-folder.png&quot; alt=&quot;YAML front matter&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;markdown&quot;&gt;Markdown:&lt;/h4&gt;
-
-&lt;p&gt;As I’ve mentioned, Jekyll pages and posts are written in markup. If you choose to use markdown to write your markup, you will find a billion resources out there on the internets to help you get started. My personal go-to is &lt;a href=&quot;https://daringfireball.net/projects/markdown/syntax&quot;&gt;Daring Fireball&lt;/a&gt;, but I’ll summarize some syntax that is particularly useful for blogging here:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;em&gt;Headers&lt;/em&gt; - Add a hash symbol before your header. The more hashes, the smaller the header…&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;# This is an H1&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;## This is an H2&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;### This is an H3&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#### This is an H4&lt;/code&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;em&gt;Lists&lt;/em&gt; - An asterisk, pluse or hyphen denotes an unordered list item and number denotes an ordered list item…&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;* something&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;* something else&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1. first thing&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2. second thing&lt;/code&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;em&gt;Blockquotes&lt;/em&gt; - Put a “&amp;gt;” before the block of text…&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt; This is a blockquote. Lorem ipsum dolor sit amet,
-  consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-  Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.&lt;/code&gt;
-  &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;em&gt;Code Blocks&lt;/em&gt; - Indent every line of the block by at least 4 spaces or 1 tab…&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;This is a normal paragraph.
-
-  This is a code block.
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;em&gt;Inline Code&lt;/em&gt; - Wrap inline code with backtick quotes ( ` )…&lt;/p&gt;
-
-    &lt;p&gt;&lt;code&gt;`&amp;lt;p&amp;gt;Hello World!&amp;lt;/p&amp;gt;`&lt;/code&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;em&gt;Links&lt;/em&gt; - Name the link in single square brackets, adjacent to that, include the href in parentheses…&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[source](https://jekyllrb.com/)&lt;/code&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;em&gt;Images&lt;/em&gt; - Add images just like this…&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;![Alt text](/path/to/img.jpg)&lt;/code&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Also note that you can escape characters just as you would in HTML. Sometimes you want an underscore to be an underscore. You can also include regular HTML tags if you need to.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/asset-folder.png&quot; alt=&quot;YAML front matter&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/docs/posts/&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 
@@ -183,8 +108,8 @@
 &lt;p&gt;By &lt;a href=&quot;https://github.com/ekopelevich&quot;&gt;Elana Kopelevich&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 28 Jan 2016 08:15:23 -0700</pubDate>
-        <link>http://reasonabout.co/jekyll/2016/01/28/ek-setting-up-jekyll-with-disqus.html</link>
-        <guid isPermaLink="true">http://reasonabout.co/jekyll/2016/01/28/ek-setting-up-jekyll-with-disqus.html</guid>
+        <link>http://reasonabout.co/jekyll/2016/01/28/ek-setting-up-jekyll.html</link>
+        <guid isPermaLink="true">http://reasonabout.co/jekyll/2016/01/28/ek-setting-up-jekyll.html</guid>
         
         <category>jekyll</category>
         
@@ -197,13 +122,13 @@
         <title>Welcome</title>
         <description>&lt;p&gt;Welcome to Reason About. This is a blog that brings fresh insights and information from about 30 new and continually learning web developers together in one space. Specifically, we are a group of soon-to-graduate full stack bootcamp students and instructors. More specifically, we are Galvanizers.&lt;/p&gt;
 
-&lt;h3 id=&quot;what-is-galvanize&quot;&gt;What is Galvanize?&lt;/h3&gt;
+&lt;h2&gt;What is Galvanize?&lt;/h2&gt;
 
-&lt;p&gt;In part, it’s a web dev bootcamp. There are many of them. Across the world there these types of programs releasing waves of developers into the wild every day. What makes us different is the entrepreneurial ecosystem that we learn in. We share a building with hundreds of startups at various stages in their growth and, by design, many of our learning experiences happen outside of our classroom.&lt;/p&gt;
+&lt;p&gt;In part, it&amp;#39;s a web dev bootcamp. There are many of them. Across the world these types of programs are releasing waves of developers into the wild every day. What makes us different is the entrepreneurial ecosystem that we learn in. We share a building with hundreds of startups at various stages in their growth and, by design, many of our learning experiences happen outside of our classroom.&lt;/p&gt;
 
-&lt;h3 id=&quot;we-are-curious&quot;&gt;We are Curious&lt;/h3&gt;
+&lt;h2&gt;We are Curious&lt;/h2&gt;
 
-&lt;p&gt;We are going through a primarily JavaScript based curriculum in our class, but we are curious and we find ourselves learning a lot of things that aren’t on the agenda. We will be using this space to share the discoveries that come from our classroom, the rabbit-holes we wander into and the other interesting parts of our lives.&lt;/p&gt;
+&lt;p&gt;We are going through a primarily JavaScript based curriculum in our class, but we are curious and we find ourselves learning a lot of things that aren&amp;#39;t on the agenda. We will be using this space to share the discoveries that come from our classroom, the rabbit-holes we wander into and the other interesting parts of our lives.&lt;/p&gt;
 
 &lt;p&gt;Please join us as we learn, teach and grow together.&lt;/p&gt;
 </description>
