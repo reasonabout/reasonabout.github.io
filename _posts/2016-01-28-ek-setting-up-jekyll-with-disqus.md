@@ -4,7 +4,8 @@ title:  "Jekyll Blog"
 comments: true
 date:   2016-01-28 08:15:23 -0700
 author: Elana Kopelevich
-categories: jekyll, disqus
+categories: jekyll
+tags: jekyll
 ---
 
 Creating this blog led me to learn a few things about how to set up a site with Jekyll. It only makes sense that I get meta with my first proper contribution and tell you how I did it.

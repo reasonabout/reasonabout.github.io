@@ -5,6 +5,7 @@ comments: true
 date:   2016-01-27 22:21:58 -0700
 author: Elana Kopelevich
 categories: meta
+tags: Galvanize
 ---
 Welcome to Reason About. This is a blog that brings fresh insights and information from about 30 new and continually learning web developers together in one space. Specifically, we are a group of soon-to-graduate full stack bootcamp students and instructors. More specifically, we are Galvanizers.
 
