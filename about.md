@@ -8,7 +8,7 @@ Welcome to Reason About. This is a blog that brings fresh insights and informati
 
 ### What is Galvanize?
 
-In part, it's a web dev bootcamp. There are many of them. Across the world there these types of programs releasing waves of developers into the wild every day. What makes us different is the entrepreneurial ecosystem that we learn in. We share a building with hundreds of startups at various stages in their growth and, by design, many of our learning experiences happen outside of our classroom.
+In part, it's a web dev bootcamp. There are many of them. Across the world these types of programs are releasing waves of developers into the wild every day. What makes us different is the entrepreneurial ecosystem that we learn in. We share a building with hundreds of startups at various stages in their growth and, by design, many of our learning experiences happen outside of our classroom.
 
 ### We are Curious
 
