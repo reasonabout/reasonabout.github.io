@@ -1,9 +1,11 @@
 ---
-layout: page
-title: About
-permalink: /about/
+layout: post
+title:  "Welcome"
+comments: true
+date:   2016-01-27 22:21:58 -0700
+author: Elana Kopelevich
+categories: meta
 ---
-
 Welcome to Reason About. This is a blog that brings fresh insights and information from twentyish new web developers together in one space. Specifically, we are a group of soon-to-graduate full stack bootcamp students. More specifically, we are Galvanize students.
 
 ### What is Galvanize?

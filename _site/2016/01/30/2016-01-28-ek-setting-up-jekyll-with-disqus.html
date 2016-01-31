@@ -1,0 +1,167 @@
+<p>Creating this blog led me to learn a few things about how to set up a site with Jekyll. It only makes sense that I get meta with my first proper contribution and tell you how I did it.</p>
+
+<p>In this post, I’ll cover:</p>
+
+<ul>
+  <li>Installing Jekyll and starting a project</li>
+  <li>Navigating around Jekyll</li>
+  <li>Adding a post</li>
+  <li>YAML front matter</li>
+  <li>Markdown resources</li>
+  <li>Comments with Disqus</li>
+</ul>
+
+<h3 id="getting-started">Getting Started</h3>
+
+<p>Okay, Jekyll’s site is pretty straightforward about this, so feel free to jump over to their site and read it directly from the <a href="https://jekyllrb.com/">source</a>. If you would like to avoid opening unnecessary tabs, here are all five of the steps to setting up a local Jekyll site:</p>
+
+<ol>
+  <li>If you don’t have Ruby installed, install Ruby.</li>
+</ol>
+
+<p>On OSX: <code class="highlighter-rouge">brew install ruby</code></p>
+
+<p>[On other systems…][[https://www.ruby-lang.org/en/documentation/installation/]]</p>
+
+<ol>
+  <li>Install Jekyll</li>
+</ol>
+
+<p><code class="highlighter-rouge">gem install jekyll</code></p>
+
+<ol>
+  <li>Create a Jekyll project locally (navigate to your project space)</li>
+</ol>
+
+<p><code class="highlighter-rouge">jekyll new my-awesome-site</code></p>
+
+<ol>
+  <li>Navigate into your new project</li>
+</ol>
+
+<p><code class="highlighter-rouge">cd my-awesome-site</code></p>
+
+<ol>
+  <li>Serve your project locally</li>
+</ol>
+
+<p><code class="highlighter-rouge">jekyll serve</code></p>
+
+<p>You will find your site running at: <code class="highlighter-rouge">http://localhost:4000</code>.</p>
+
+<p><em>I’m hosting this site on GitHub pages and redirecting to a custom domain. I’m not going to cover that today, but I will in a future post.</em></p>
+
+<h3 id="navigating-around-jekyll">Navigating around Jekyll</h3>
+
+<p>This is what your project might look like:</p>
+
+<p><img src="/path/to/img.jpg" alt="Alt text" /></p>
+
+<p>First, let me tell you what not to do:</p>
+
+<ol>
+  <li><em>DO NOT EDIT ANYTHING IN THE _site DIRECTORY</em></li>
+  <li><em>DO NOT EDIT ANYTHING IN THE _site DIRECTORY</em></li>
+</ol>
+
+<p>The _site directory is your public directory.</p>
+
+<h3 id="adding-a-post">Adding a Post</h3>
+
+<p>If you’re used to using a rich text editor along the lines of what you get with WordPress, you will need to shift your workflow a bit. If you feel uncomfortable whenever you have to leave your text editor or terminal, then this is the platform for you. Jekyll posts are just markup. I’m using markdown, so I’ll focus on that, but you can use HTML or textile (with the proper extensions).</p>
+
+<p>Writing a blog on a Jekyll site is as easy as adding a markup file to the _posts directory.</p>
+
+<h4 id="the-important-things">The Important Things</h4>
+
+<ol>
+  <li><em>Your file name matters!</em> Start with the date in kebab case (YYYY-MM-DD) and continue with the file name, also connected with dashes. It should look like this:</li>
+</ol>
+
+<p><code class="highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+
+<p>For example:</p>
+
+<p><code class="highlighter-rouge">2016-01-27-ek-welcome-to-reason-about.markdown</code></p>
+
+<ol>
+  <li>And I’m not sure if I mentioned this before, but you should definitely, never ever edit anything in the _site directory</li>
+</ol>
+
+<h4 id="inside-the-file">Inside the file</h4>
+
+<p>Your file will have a top section consisting of YAML front matter. This is the metadata and it’s really important. This post’s front matter looks like this:</p>
+
+<p><img src="assets/ek/2016/01/front-matter.jpg" alt="YAML front matter" /></p>
+
+<p><a href="http://jekyllrb.com/docs/posts/">Source</a></p>
+
+<h3 id="markdown">Markdown</h3>
+
+<p>Jekyll pages and posts are written in Markdown (and sometimes YAML). Markdown is incredibly easy to get familiar with and there a billion resources and cheatsheets out there on the internets to help you get started. My personal go-to is [Daring Fireball] [[https://daringfireball.net/projects/markdown/syntax]], but I’ll summarize some syntax that is particularly useful for blogging here:</p>
+
+<ul>
+  <li><em>Headers</em></li>
+</ul>
+
+<p>Just use a ‘#’ before your text.</p>
+
+<p># This is an H1
+  ## This is an H2
+  ### This is an H3
+  ### This is an H4</p>
+
+<ul>
+  <li>
+    <p><em>Blockquotes</em></p>
+  </li>
+  <li>
+    <p><em>Lists</em></p>
+
+    <p>An asterisk denotes an unordered list item and number denotes an ordered list item.</p>
+  </li>
+  <li>
+    <p><em>Code Blocks</em></p>
+  </li>
+  <li>
+    <p><em>Inline Code</em></p>
+
+    <p>Wrap inline code with backtick quotes (`).</p>
+
+    <p>This is what and article tag looks like: <code class="highlighter-rouge">&lt;article&gt;</code> tag.</p>
+  </li>
+  <li>
+    <p><em>Links</em></p>
+
+    <p>Name the link in single square brackets, then include the href in double square brackets.</p>
+
+    <p><code class="highlighter-rouge">[source][[https://jekyllrb.com/]]</code></p>
+  </li>
+  <li>
+    <p><em>Bold</em></p>
+
+    <p>Wrap the text with two underscores.</p>
+  </li>
+  <li>
+    <p><em>Italic</em></p>
+  </li>
+  <li>
+    <p><em>Horizontal Rules</em></p>
+  </li>
+</ul>
+
+<p>Place 3+ hyphens, asterisks, or underscores on a line.</p>
+
+<ul>
+  <li><em>Images</em></li>
+</ul>
+
+<p><img src="/path/to/img.jpg" alt="Alt text" /></p>
+
+<p>Also note that you can escape characters just as you would in html. Sometimes you want an underscore to be an underscore.</p>
+
+<h3 id="comments-with-disqus">Comments with Disqus</h3>
+
+<p>The Jekyll platform does not have a built in commenting system, but fear not, it’s quite easy to integrate the Disqus commenting platform.</p>
+
+<p>[Disqus Source] [[https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions]]</p>
