@@ -9,15 +9,10 @@
 4. Update YAM front matter values
 7. Write something interesting
 8. At the bottom of your post, include a bio with a link to your personal site
-9. Add, commit, and push to the repo (if you forked the repo, do a pull request)
-
-## If you want to run it locally:
-
-1. cd into the reasonabout repo
-2. `sudo gem install jekyll` (make sure you have ruby installed)
-3. `jekyll serve`
-
-Go to `localhost:4000` to see the site running locally.
+9. cd into the reasonabout repo
+10. `sudo gem install jekyll` (make sure you have ruby installed)
+11. `jekyll serve` (This step is REQUIRED to transpile the markdown into markup)
+12. Add, commit, and push to the repo (if you forked the repo, do a pull request)
  
 ## Adding images or documents to your post?
 

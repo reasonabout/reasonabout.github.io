@@ -1,25 +1,27 @@
 ---
 layout: default
 ---
-<header id="home-header" style="background-image: url({{ site.baseurl }}{{ site.sidebar_image }});">
+<header id="home-header" style="background-image: url({{ site.sidebar_image }});">
   <div class="container">
     <h1>{{ site.title }}</h1>
     <ul class="meta">
       <li>
-        <span>
-          {{ site.description }}
-        </span>
+        <span>{{ site.description }}</span>
       </li>
-      <li>
+      <div class="social">
         <a href="https://twitter.com/{{ site.twitter_username }}">
-          @{{ site.twitter_username }}
+          <img src="/assets/main/twitter.png" alt="twitter: @reasonabout_co" />
         </a>
-      </li>
-      <li>
-        <a href="mailto:{{ site.email }}">
-          {{ site.email }}
+        <a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml">
+          <img src="/assets/main/rss.png" alt="rss" />
         </a>
-      </li>
+      </div>
+      <a href="/meta/2016/01/27/ek-welcome-to-reason-about.html">More about this blog...</a>
+      <br>
+      <a href="mailto:{{ site.email }}">
+      {{ site.email }}
+      </a>
+    </ul>
   </div>
 </header>
 <article>
