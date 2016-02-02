@@ -8,9 +8,11 @@ categories: ['coding']
 tags: ['npm', 'javascript', 'open source']
 ---
 
+There is a first time for everything. This is the story of making and publishing my first npm module. I remember it like it was only a few days ago...
+
 ## Notable Preliminary Messages
 
-I recently built and published my first npm module. Npm is a package manager primarily used by applications built on node.js. Npm modules are redistributable pieces of code that can be plugged in to other applications to extend their functionality. For more on what npm is and what it does, visit their [website](https://www.npmjs.com/).
+Npm is a package manager primarily used by applications built on node.js. Npm modules are redistributable pieces of code that can be plugged in to other applications to extend their functionality. For more on what npm is and what it does, visit their [website](https://www.npmjs.com/).
 
 ## Negating Preconceived Misconceptions
 

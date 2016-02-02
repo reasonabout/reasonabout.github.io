@@ -5,15 +5,17 @@
     <description>A blog that brings fresh insights from a bunch of curious web devs together in one space.</description>
     <link>http://reasonabout.co/</link>
     <atom:link href="http://reasonabout.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 02 Feb 2016 08:23:59 -0700</pubDate>
-    <lastBuildDate>Tue, 02 Feb 2016 08:23:59 -0700</lastBuildDate>
+    <pubDate>Tue, 02 Feb 2016 08:51:06 -0700</pubDate>
+    <lastBuildDate>Tue, 02 Feb 2016 08:51:06 -0700</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
         <title>Npm Modules</title>
-        <description>&lt;h2 id=&quot;notable-preliminary-messages&quot;&gt;Notable Preliminary Messages&lt;/h2&gt;
+        <description>&lt;p&gt;There is a first time for everything. This is the story of making and publishing my first npm module. I remember it like it was only a few days ago…&lt;/p&gt;
 
-&lt;p&gt;I recently built and published my first npm module. Npm is a package manager primarily used by applications built on node.js. Npm modules are redistributable pieces of code that can be plugged in to other applications to extend their functionality. For more on what npm is and what it does, visit their &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;website&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;notable-preliminary-messages&quot;&gt;Notable Preliminary Messages&lt;/h2&gt;
+
+&lt;p&gt;Npm is a package manager primarily used by applications built on node.js. Npm modules are redistributable pieces of code that can be plugged in to other applications to extend their functionality. For more on what npm is and what it does, visit their &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;website&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;negating-preconceived-misconceptions&quot;&gt;Negating Preconceived Misconceptions&lt;/h2&gt;
 
