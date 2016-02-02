@@ -5,87 +5,141 @@
     <description>A blog that brings fresh insights from a bunch of curious web devs together in one space.</description>
     <link>http://reasonabout.co/</link>
     <atom:link href="http://reasonabout.co/feed.xml" rel="self" type="application/rss+xml"/>
-<<<<<<< HEAD
-    <pubDate>Mon, 01 Feb 2016 21:44:00 -0700</pubDate>
-    <lastBuildDate>Mon, 01 Feb 2016 21:44:00 -0700</lastBuildDate>
-=======
-    <pubDate>Mon, 01 Feb 2016 21:51:01 -0700</pubDate>
-    <lastBuildDate>Mon, 01 Feb 2016 21:51:01 -0700</lastBuildDate>
->>>>>>> 6c07eb8d3ea36d73e6696f3e75d2739fbe1cd302
+    <pubDate>Tue, 02 Feb 2016 08:48:56 -0700</pubDate>
+    <lastBuildDate>Tue, 02 Feb 2016 08:48:56 -0700</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
+        <title>Npm Modules</title>
+        <description>&lt;p&gt;There is a first time for everything. This is the story of making and publishing my first npm module. I remember it like it was only a few days ago…&lt;/p&gt;
+
+&lt;h2 id=&quot;notable-preliminary-messages&quot;&gt;Notable Preliminary Messages&lt;/h2&gt;
+
+&lt;p&gt;Npm is a package manager primarily used by applications built on node.js. Npm modules are redistributable pieces of code that can be plugged in to other applications to extend their functionality. For more on what npm is and what it does, visit their &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;negating-preconceived-misconceptions&quot;&gt;Negating Preconceived Misconceptions&lt;/h2&gt;
+
+&lt;p&gt;Because npm is the default package manager for node.js applications, many people think that npm stands for “Node Package Manager”. This is incorrect. In fact, npm is not an acronym. It is a backronym that stands for “npm is not an acronym”. Those who know this often make up random acronyms when asked what npm stands for, such as “Nautical Pirate Marauders”.&lt;/p&gt;
+
+&lt;h2 id=&quot;nuanced-portfolio-motivation&quot;&gt;Nuanced Portfolio Motivation&lt;/h2&gt;
+
+&lt;p&gt;Early on in my time going through Galvanize’s full stack web development program (coding bootcamp), I decided I wanted to publish an npm module before the course ended. In absence of an idea for a truly &lt;em&gt;useful&lt;/em&gt; piece of modular code, I figured I would write a truly &lt;em&gt;useless&lt;/em&gt; one. The result was  &lt;a href=&quot;https://www.npmjs.com/package/debunk&quot;&gt;DeBunk&lt;/a&gt;. The idea was simple: write a small amount of useless code accompanied by excessive documentation that heralds its importance. It was silly. I expected to have a few laughs about it and move on. What I didn’t expect was that some of my classmates would want to join in on the fun (perhaps due to me threatening them if they didn’t).&lt;/p&gt;
+
+&lt;h2 id=&quot;communal-repository-management&quot;&gt;commuNal rePository manageMent&lt;/h2&gt;
+
+&lt;p&gt;My module’s code is open source on &lt;a href=&quot;https://www.github.com/skuttleman/debunk&quot;&gt;github&lt;/a&gt;, and some of my friends submitted contributions to the repository to add similarly useless lines of code. Each of them made me laugh, and I hope they had as much fun contributing them as I had making the module. My favorite of these, was the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;js
+doesItEqualThree: function(input){
+  if(input === 3) {
+    return &quot;yes&quot;;
+  } else {
+    return &quot;no&quot;;
+  }
+},
+doesItEqualSeventeen: function(input){
+  if(input === 17) {
+    return &quot;yes&quot;;
+  } else {
+    return &quot;no&quot;;
+  }
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;What makes this contribution particularly enjoyable is not how useless it is - though it is remarkably useless -, but rather what happened next.
+A few minutes after this was merged into DeBunk, the following module was posted by the author of the code above in response to itself:  &lt;a href=&quot;https://www.npmjs.com/package/destupidify&quot;&gt;Destupidify&lt;/a&gt;. Oh, the layers. I laughed for years. I have the best friends.&lt;/p&gt;
+
+&lt;h2 id=&quot;npm-publishing-memoirs&quot;&gt;Npm Publishing Memoirs&lt;/h2&gt;
+
+&lt;p&gt;Publishing a module to npm is super easy, and doesn’t have to be an epic undertaking. It doesn’t even have to be useful for anything other than a few laughs. For more on publishing to npm, visit their &lt;a href=&quot;https://docs.npmjs.com/getting-started/publishing-npm-packages&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;By &lt;a href=&quot;https://www.github.com/skuttleman&quot;&gt;Ben Allred&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 Feb 2016 07:30:00 -0700</pubDate>
+        <link>http://reasonabout.co/coding/2016/02/02/bda-npm-modules.html</link>
+        <guid isPermaLink="true">http://reasonabout.co/coding/2016/02/02/bda-npm-modules.html</guid>
+        
+        <category>npm</category>
+        
+        <category>javascript</category>
+        
+        <category>open source</category>
+        
+        
+        <category>coding</category>
+        
+      </item>
+    
+      <item>
         <title>How To Deploy To Firebase</title>
-        <description>&lt;p&gt;So, you&amp;#39;re awesome and want the world to know it? Watch out Earth, a new star is about to be born.
+        <description>&lt;p&gt;So, you’re awesome and want the world to know it? Watch out Earth, a new star is about to be born.
 Here is a simple, step-by-step instructional guide on how to deploy a front-end application to Firebase.&lt;/p&gt;
 
-&lt;p&gt;Note, this guide is for a front-end application with static files. It won&amp;#39;t go into deploying a server or database, or hooking up a database/server to the front-end app. This tutorial also assumes you to have a basic understanding of using your terminal.&lt;/p&gt;
+&lt;p&gt;Note, this guide is for a front-end application with static files. It won’t go into deploying a server or database, or hooking up a database/server to the front-end app. This tutorial also assumes you to have a basic understanding of using your terminal.&lt;/p&gt;
 
 &lt;p&gt;Expect:
 * A couple pointers before you get rolling*
 * Step-by-step to deploying*
 * Solutions for common sticking points that trip people up*&lt;/p&gt;
 
-&lt;h2&gt;Slow Your Roll&lt;/h2&gt;
+&lt;h2 id=&quot;slow-your-roll&quot;&gt;Slow Your Roll&lt;/h2&gt;
+&lt;p&gt;First thing’s first, you need an account on Firebase. So head over to &lt;a href=&quot;https://www.firebase.com/login/&quot;&gt;www.firebase.com/login&lt;/a&gt; to login with Google, Github, or an email/password combo.&lt;/p&gt;
 
-&lt;p&gt;First thing&amp;#39;s first, you need an account on Firebase. So head over to &lt;a href=&quot;https://www.firebase.com/login/&quot;&gt;www.firebase.com/login&lt;/a&gt; to login with Google, Github, or an email/password combo.&lt;/p&gt;
-
-&lt;p&gt;Second, you will need Node.js and npm installed in order to make this work. I know that&amp;#39;s super annoying, but these are things you&amp;#39;ll be a using a ton if you aren&amp;#39;t already, so they&amp;#39;re worth the time. If you install node, npm automatically downloads with it. I suggest following the documentation &lt;a href=&quot;https://nodejs.org/en/download/package-manager/#osx&quot;&gt;here&lt;/a&gt;. At the risk of confusing you further, Homebrew is the easiest way to download Node. It&amp;#39;s a package manager, which is techy for it has a library of programs you can download straight from your terminal. No more downloading .exe files and running them from your desktop. You&amp;#39;re a developer now.&lt;/p&gt;
+&lt;p&gt;Second, you will need Node.js and npm installed in order to make this work. I know that’s super annoying, but these are things you’ll be a using a ton if you aren’t already, so they’re worth the time. If you install node, npm automatically downloads with it. I suggest following the documentation &lt;a href=&quot;https://nodejs.org/en/download/package-manager/#osx&quot;&gt;here&lt;/a&gt;. At the risk of confusing you further, Homebrew is the easiest way to download Node. It’s a package manager, which is techy for it has a library of programs you can download straight from your terminal. No more downloading .exe files and running them from your desktop. You’re a developer now.&lt;/p&gt;
 
 &lt;p&gt;Next, we are going to download the CLI (Command Line Interface) tools. This is will be how you get your computer to talk to Firebase. If it gets confusing, head on over to the &lt;a href=&quot;https://www.firebase.com/docs/hosting/guide/deploying.html&quot;&gt;Getting Started documentation&lt;/a&gt; for another run through.&lt;/p&gt;
 
-&lt;p&gt;First, you will run the command:  &lt;code&gt;npm install -g firebase-tools&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;First, you will run the command:  &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g firebase-tools&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;npm is a package manager that was downloaded with Node.js, and it runs and grabs the firebase-tools from the internet and installs it onto your computer. The -g is called the global flag, and gives npm some additional information on how exactly you want to download the firebase-tools program. There are other flags as well, but that is a little out of scope for this lesson. Downloading it with that flag will make sure that firebase-tools is available GLOBALLY to you in any project you create on your computer.&lt;/p&gt;
 
-&lt;h2&gt;How To Deploy Apps and Influence People&lt;/h2&gt;
-
+&lt;h2 id=&quot;how-to-deploy-apps-and-influence-people&quot;&gt;How To Deploy Apps and Influence People&lt;/h2&gt;
 &lt;p&gt;Now that we have the pesky stuff out of the way, the fun begins.&lt;/p&gt;
 
-&lt;p&gt;First thing is first, you need to login to firebase-tools on the command line. You do this by running &amp;#39;firebase login&amp;#39; on your command line.&lt;/p&gt;
+&lt;p&gt;First thing is first, you need to login to firebase-tools on the command line. You do this by running ‘firebase login’ on your command line.&lt;/p&gt;
 
 &lt;p&gt;The login flow will vary slightly based on how you chose to signup to Firebase. If you gave it an email and password, you will enter those to login. Otherwise, a new tab will pop-up in your browser asking you to authorize the login.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/dl/2016/02/authorized.png&quot; alt=&quot;Firebase Authorization Complete&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/dl/2016/02/authorized.png&quot; alt=&quot;Firebase Authorization Complete&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Boom, we&amp;#39;re in.&lt;/p&gt;
+&lt;p&gt;Boom, we’re in.&lt;/p&gt;
 
-&lt;p&gt;Now, we have to tell Firebase what we want it to pull up to it&amp;#39;s servers. Make sure you&amp;#39;re in your project folder; this is where the index.html is going to be sitting. When you deploy to Firebase, it will pull everything in that folder up with it, and look for the index.html to serve up as the home page. Make sure the index.html is sitting in your current directory, and that your app isn&amp;#39;t pulling any files or assets from outside the folder, because they won&amp;#39;t be along for the ride and therefore, won&amp;#39;t show up when you check load the deployed site.&lt;/p&gt;
+&lt;p&gt;Now, we have to tell Firebase what we want it to pull up to it’s servers. Make sure you’re in your project folder; this is where the index.html is going to be sitting. When you deploy to Firebase, it will pull everything in that folder up with it, and look for the index.html to serve up as the home page. Make sure the index.html is sitting in your current directory, and that your app isn’t pulling any files or assets from outside the folder, because they won’t be along for the ride and therefore, won’t show up when you check load the deployed site.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/dl/2016/02/files.png&quot; alt=&quot;Current Directory&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/dl/2016/02/files.png&quot; alt=&quot;Current Directory&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;As you can see from the screenshot, this folder I&amp;#39;m in now is perfect. It&amp;#39;s where the index is sitting, and all my assets are tucked safely within.&lt;/p&gt;
+&lt;p&gt;As you can see from the screenshot, this folder I’m in now is perfect. It’s where the index is sitting, and all my assets are tucked safely within.&lt;/p&gt;
 
-&lt;p&gt;So, how do we get the ball rolling? By issuing the command:  &lt;code&gt;firebase init&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;So, how do we get the ball rolling? By issuing the command:  &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase init&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Firebase will ask what Firebase you want to use. This can get confusing, because the company is named Firebase, and each individual project you publish is called a &amp;quot;Firebase.&amp;quot; To cut confusion, I&amp;#39;ll try to be explicit when I refer to a Firebase project. If you initialized a Firebase project from the dashboard on the website, it will show up here as a list. Select the correct Firebase project. Otherwise, create a new one from the command line. Use the arrow keys to select which one you want, then hit enter. If you choose new, you have to type in the name of your new Firebase project.&lt;/p&gt;
+&lt;p&gt;Firebase will ask what Firebase you want to use. This can get confusing, because the company is named Firebase, and each individual project you publish is called a “Firebase.” To cut confusion, I’ll try to be explicit when I refer to a Firebase project. If you initialized a Firebase project from the dashboard on the website, it will show up here as a list. Select the correct Firebase project. Otherwise, create a new one from the command line. Use the arrow keys to select which one you want, then hit enter. If you choose new, you have to type in the name of your new Firebase project.&lt;/p&gt;
 
-&lt;p&gt;The next part is the single trickiest part of the whole process. It asks what you want the public root to be. This is where Firebase will create the firebase.json, which we will cover more in a moment. This has to be the directory that the index.html is in. Remember earlier when you made sure you were running these commands while you were sitting in the project folder with the index.html in it? Tell Firebase that you want it deploy from your current folder by typing in:  &lt;code&gt;./&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The next part is the single trickiest part of the whole process. It asks what you want the public root to be. This is where Firebase will create the firebase.json, which we will cover more in a moment. This has to be the directory that the index.html is in. Remember earlier when you made sure you were running these commands while you were sitting in the project folder with the index.html in it? Tell Firebase that you want it deploy from your current folder by typing in:  &lt;code class=&quot;highlighter-rouge&quot;&gt;./&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/dl/2016/02/root.png&quot; alt=&quot;Public Folder Relative Path&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/dl/2016/02/root.png&quot; alt=&quot;Public Folder Relative Path&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The first time I did this, I got confused and tried to type in an absolute path, and it didn&amp;#39;t work. Avoid my suffering.&lt;/p&gt;
+&lt;p&gt;The first time I did this, I got confused and tried to type in an absolute path, and it didn’t work. Avoid my suffering.&lt;/p&gt;
 
-&lt;p&gt;So, if you type:  &lt;code&gt;ls&lt;/code&gt;   you should see that you now have a new file, called firebase.json.&lt;/p&gt;
+&lt;p&gt;So, if you type:  &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;   you should see that you now have a new file, called firebase.json.&lt;/p&gt;
 
-&lt;p&gt;You&amp;#39;re almost done. Next, you&amp;#39;re going to type: &lt;code&gt;firebase deploy&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You’re almost done. Next, you’re going to type: &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase deploy&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;This will only work when you&amp;#39;re sitting in the folder that has the firebase.json. It will push all your static files to their new home online.&lt;/p&gt;
+&lt;p&gt;This will only work when you’re sitting in the folder that has the firebase.json. It will push all your static files to their new home online.&lt;/p&gt;
 
-&lt;p&gt;Anytime you make stable changes, and are ready to publish them live, simply type in &lt;code&gt;firebase deploy&lt;/code&gt; and it will push everything again. It will republish all your files from scratch every time, so if you delete a file your project depends on and deploy again, the file will also disappear from your Firebase online and your app will break. It&amp;#39;s not a cumulative update like using Git.&lt;/p&gt;
+&lt;p&gt;Anytime you make stable changes, and are ready to publish them live, simply type in &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase deploy&lt;/code&gt; and it will push everything again. It will republish all your files from scratch every time, so if you delete a file your project depends on and deploy again, the file will also disappear from your Firebase online and your app will break. It’s not a cumulative update like using Git.&lt;/p&gt;
 
-&lt;p&gt;From your command line, you can type &lt;code&gt;firebase open&lt;/code&gt; and it will open a new tab in your browser to your new site.&lt;/p&gt;
+&lt;p&gt;From your command line, you can type &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase open&lt;/code&gt; and it will open a new tab in your browser to your new site.&lt;/p&gt;
 
 &lt;p&gt;Bravo!&lt;/p&gt;
 
-&lt;p&gt;You can login to the Firebase dashboard and see all the apps you&amp;#39;re running and adjust their settings. They&amp;#39;ll let you see the deploy history for each one, and you can rollback to a previous deploy in case you break something.&lt;/p&gt;
+&lt;p&gt;You can login to the Firebase dashboard and see all the apps you’re running and adjust their settings. They’ll let you see the deploy history for each one, and you can rollback to a previous deploy in case you break something.&lt;/p&gt;
 
 &lt;p&gt;In summary, pushing to firebase is easy peasy if you have firebase-tools installed:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;firebase init&lt;/code&gt;
-  &lt;code&gt;firebase deploy&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;firebase init&lt;/code&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;firebase deploy&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;That&amp;#39;s it!&lt;/p&gt;
+&lt;p&gt;That’s it!&lt;/p&gt;
 
 &lt;p&gt;By &lt;a href=&quot;https://github.com/dlinch&quot;&gt;Derik Linch&lt;/a&gt;&lt;/p&gt;
 </description>

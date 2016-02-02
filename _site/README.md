@@ -15,8 +15,7 @@
 
 1. cd into the reasonabout repo
 2. `sudo gem install jekyll` (make sure you have ruby installed)
-3. `sudo gem install redcarpet`
-4. `jekyll serve`
+3. `jekyll serve`
 
 Go to `localhost:4000` to see the site running locally.
  
@@ -24,6 +23,6 @@ Go to `localhost:4000` to see the site running locally.
 
 1. Create a directory inside of the "assets" directory and name it with your initials
 2. Organize your files by year and month (see "ek" directory for an example)
-3. Use relative links to access your files:
+3. Use absolute links to access your files:
 
     `/assets/ek/my-file.jpg`
