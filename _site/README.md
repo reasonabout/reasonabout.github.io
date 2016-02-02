@@ -18,4 +18,4 @@
 2. Organize your files by year and month (see "ek" directory for an example)
 3. Use relative links to access your files:
 
-    assets/ek/my-file.jpg
+    `/assets/ek/my-file.jpg`

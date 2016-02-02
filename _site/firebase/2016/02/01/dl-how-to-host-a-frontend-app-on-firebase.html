@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Reason About</title>
+  <meta name="viewport" content="width=device-width">
+
+  <!-- syntax highlighting CSS -->
+  <link rel="stylesheet" href="/css/syntax.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <header style="background-image: url(/assets/ek/2016/01/jekyll.jpg);">
+  <div class="container post-container">
+    <a href="/" class="home_button"></a>
+    <div class="inner-container">
+      <h1>How To Deploy To Firebase</h1>
+      <ul class="meta">
+        <li>
+          <span>
+            Published
+          </span>
+          01 Feb 2016
+        </li>
+        <li>
+          <span>
+            Category
+          </span>
+          firebase
+        </li>
+      </ul>
+    </div>
+    <ul class="pagination">
+      
+        <li class="previous">
+          <a href="/jekyll/2016/01/28/ek-setting-up-jekyll.html">
+            Previous
+          </a>
+        </li>
+      
+      
+    </ul>
+  </div>
+</header>
+
+<article>
+  <div class="container">
+    <p>So, you&#39;re awesome and want the world to know it? Watch out Earth, a new star is about to be born.
+Here is a simple, step-by-step instructional guide on how to deploy a front-end application to Firebase.</p>
+
+<p>Note, this guide is for a front-end application with static files. It won&#39;t go into deploying a server or database, or hooking up a database/server to the front-end app. This tutorial also assumes you to have a basic understanding of using your terminal.</p>
+
+<p>Expect:
+* A couple pointers before you get rolling*
+* Step-by-step to deploying*
+* Solutions for common sticking points that trip people up*</p>
+
+<h2>Slow Your Roll</h2>
+
+<p>First thing&#39;s first, you need an account on Firebase. So head over to <a href="https://www.firebase.com/login/">www.firebase.com/login</a> to login with Google, Github, or an email/password combo.</p>
+
+<p>Second, you will need Node.js and npm installed in order to make this work. I know that&#39;s super annoying, but these are things you&#39;ll be a using a ton if you aren&#39;t already, so they&#39;re worth the time. If you install node, npm automatically downloads with it. I suggest following the documentation <a href="https://nodejs.org/en/download/package-manager/#osx">here</a>. At the risk of confusing you further, Homebrew is the easiest way to download Node. It&#39;s a package manager, which is techy for it has a library of programs you can download straight from your terminal. No more downloading .exe files and running them from your desktop. You&#39;re a developer now.</p>
+
+<p>Next, we are going to download the CLI (Command Line Interface) tools. This is will be how you get your computer to talk to Firebase. If it gets confusing, head on over to the <a href="https://www.firebase.com/docs/hosting/guide/deploying.html">Getting Started documentation</a> for another run through.</p>
+
+<p>First, you will run the command:  <code>npm install -g firebase-tools</code></p>
+
+<p>npm is a package manager that downloaded with Node.js, and it runs and grabs the firebase-tools from the internet and installs it onto your computer. The -g is called the global flag, and gives npm some additional information on how exactly you want to download the firebase-tools program. There are other flags as well, but that is a little out of scope for this lesson. Downloading it with that flag will make sure that firebase-tools is available GLOBALLY to you in any project you create on your computer.</p>
+
+<h2>How To Deploy Apps and Influence People</h2>
+
+<p>Now that we have the pesky stuff out of the way, the fun begins.</p>
+
+<p>First thing is first, you need to login to firebase-tools on the command line. You do this by running &#39;firebase login&#39; on your command line.</p>
+
+<p>The login flow will vary slightly based on how you chose to signup to Firebase. If you gave it an email and password, you will enter those to login. Otherwise, a new tab will pop-up in your browser asking you to authorize the login.</p>
+
+<p><img src="/assets/dl/2016/02/authorized.png" alt="Firebase Authorization Complete"></p>
+
+<p>Boom, we&#39;re in.</p>
+
+<p>Now, we have to tell Firebase what we want it to pull up to it&#39;s servers. Make sure you&#39;re in your project folder; this is where the index.html is going to be sitting. When you deploy to Firebase, it will pull everything in that folder up with it, and look for the index.html to serve up as the home page. Make sure the index.html is sitting in your current directory, and that your app isn&#39;t pulling any files or assets from outside the folder, because they won&#39;t be along for the ride and therefore, won&#39;t show up when you check load the deployed site.</p>
+
+<p><img src="/assets/dl/2016/02/files.png" alt="Current Directory"></p>
+
+<p>As you can see from the screenshot, this folder I&#39;m in now is perfect. It&#39;s where the index is sitting, and all my assets are tucked safely within.</p>
+
+<p>So, how do we get the ball rolling? By issuing the command:  <code>firebase init</code></p>
+
+<p>Firebase will ask what Firebase you want to use. This can get confusing, because the company is named Firebase, and each individual project you publish is called a &quot;Firebase.&quot; To cut confusion, I&#39;ll try to be explicit when I refer to a Firebase project. If you initialized a Firebase project from the dashboard on the website, it will show up here as a list. Select the correct Firebase project. Otherwise, create a new one from the command line. Use the arrow keys to select which one you want, then hit enter. If you choose new, you have to type in the name of your new Firebase project.</p>
+
+<p>The next part is the single trickiest part of the whole process. It asks what you want the public root to be. This is where Firebase will create the firebase.json, which we will cover more in a moment. This has to be the directory that the index.html is in. Remember earlier when you made sure you were running these commands while you were sitting in the project folder with the index.html in it? Tell Firebase that you want it deploy from your current folder by typing in:  <code>./</code></p>
+
+<p><img src="/assets/dl/2016/02/root.png" alt="Public Folder Relative Path"></p>
+
+<p>The first time I did this, I got confused and tried to type in an absolute path, and it didn&#39;t work. Avoid my suffering.</p>
+
+<p>So, if you type:  <code>ls</code>   you should see that you now have a new file, called firebase.json.</p>
+
+<p>You&#39;re almost done. Next, you&#39;re going to type: <code>firebase deploy</code></p>
+
+<p>This will only work when you&#39;re sitting in the folder that has the firebase.json. It will push all your static files to their new home online.</p>
+
+<p>Anytime you make stable changes, and are ready to publish them live, simply type in <code>firebase deploy</code> and it will push everything again. It will republish all your files from scratch every time, so if you delete a file your project depends on and deploy again, the file will also disappear from your Firebase online and your app will break. It&#39;s not a cumulative update like using Git.</p>
+
+<p>From your command line, you can type <code>firebase open</code> and it will open a new tab in your browser to your new site.</p>
+
+<p>Bravo!</p>
+
+<p>You can login to the Firebase dashboard and see all the apps you&#39;re running and adjust their settings. They&#39;ll let you see the deploy history for each one, and you can rollback to a previous deploy in case you break something.</p>
+
+<p>In summary, pushing to firebase is easy peasy if you have firebase-tools installed:</p>
+
+<p><code>firebase init</code>
+  <code>firebase deploy</code></p>
+
+<p>That&#39;s it!</p>
+
+<p>By <a href="https://github.com/dlinch">Derik Linch</a></p>
+
+
+    <script id="dsq-count-scr" src="//reasonabout.disqus.com/count.js" async></script>
+
+    
+    <div id="disqus_thread"></div>
+      <script type="text/javascript">
+      var disqus_shortname = 'reasonabout';
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+  </div>
+</article>
+
+</body>
+
+
+</html>
