@@ -16,6 +16,6 @@
 
 1. Create a directory inside of the "assets" directory and name it with your initials
 2. Organize your files by year and month (see "ek" directory for an example)
-3. Use relative links to access your files:
+3. Use absolute links to access your files:
 
     `/assets/ek/my-file.jpg`
