@@ -5,6 +5,3 @@ description: A blog that brings fresh insights from a bunch of curious web devs 
 url: http://reasonabout.co
 twitter_username: reasonabout_co
 sidebar_image: assets/cover.jpg
-
-# Build settings
-markdown: redcarpet

@@ -16,6 +16,7 @@
 
   <!-- Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="assets/favicon.png"  type="image/x-icon" />
 </head>
 <body>
   <header style="background-image: url(/assets/ek/2016/01/jekyll.jpg);">
@@ -47,6 +48,12 @@
         </li>
       
       
+      <li class="next">
+        <a href="/firebase/2016/02/01/dl-how-to-host-a-frontend-app-on-firebase.html">
+          Next
+        </a>
+      </li>
+      
     </ul>
   </div>
 </header>
@@ -55,93 +62,94 @@
   <div class="container">
     <p>Creating this blog led me to learn a few things about how to set up a site with Jekyll. It only makes sense that I get meta with my first proper contribution and tell you how I did it.</p>
 
-<p>In this post, I&#39;ll cover:</p>
+<p>In this post, I’ll cover:</p>
 
 <ul>
-<li>Installing Jekyll and starting a project</li>
-<li>Navigating around a Jekyll project</li>
-<li>Adding a post</li>
+  <li>Installing Jekyll and starting a project</li>
+  <li>Navigating around a Jekyll project</li>
+  <li>Adding a post</li>
 </ul>
 
-<h2>Getting Started with Jekyll</h2>
+<h2 id="getting-started-with-jekyll">Getting Started with Jekyll</h2>
 
 <p>Here are all five of the steps to setting up a local Jekyll site:</p>
 
 <ol>
-<li>If you don&#39;t have Ruby installed, install Ruby: <code>brew install ruby</code> (OSX)</li>
-<li>Install Jekyll: <code>gem install jekyll</code></li>
-<li>Create a Jekyll project locally: <code>jekyll new my-awesome-site</code></li>
-<li>Navigate into your new project: <code>cd my-awesome-site</code></li>
-<li>Serve your project locally: <code>jekyll serve</code></li>
+  <li>If you don’t have Ruby installed, install Ruby: <code class="highlighter-rouge">brew install ruby</code> (OSX)</li>
+  <li>Install Jekyll: <code class="highlighter-rouge">gem install jekyll</code></li>
+  <li>Create a Jekyll project locally: <code class="highlighter-rouge">jekyll new my-awesome-site</code></li>
+  <li>Navigate into your new project: <code class="highlighter-rouge">cd my-awesome-site</code></li>
+  <li>Serve your project locally: <code class="highlighter-rouge">jekyll serve</code></li>
 </ol>
 
-<p>You will find your site running at: <code>http://localhost:4000</code>.</p>
+<p>You will find your site running at: <code class="highlighter-rouge">http://localhost:4000</code>.</p>
 
 <p><a href="https://jekyllrb.com/">Source</a></p>
 
-<p><em>I&#39;m hosting this site on GitHub pages and redirecting to a custom domain. I&#39;m not going to cover that today, but I will in a future post.</em></p>
+<p><em>I’m hosting this site on GitHub pages and redirecting to a custom domain. I’m not going to cover that today, but I will in a future post.</em></p>
 
-<h2>Navigating around Jekyll</h2>
+<h2 id="navigating-around-jekyll">Navigating around Jekyll</h2>
 
 <p>This is what your project might look like:</p>
 
-<p><img src="/assets/ek/2016/01/jekyll-structure.png" alt="Jekyll Site Structure"></p>
+<p><img src="/assets/ek/2016/01/jekyll-structure.png" alt="Jekyll Site Structure" /></p>
 
 <p>Keep three things in mind as you start working in your Jekyll project:</p>
 
 <ol>
-<li><em>Do not edit anything in the _site directory</em></li>
-<li><em>Do not edit anything in the _site directory</em></li>
-<li><em>Do not edit anything in the _site directory</em></li>
+  <li><em>Do not edit anything in the _site directory</em></li>
+  <li><em>Do not edit anything in the _site directory</em></li>
+  <li><em>Do not edit anything in the _site directory</em></li>
 </ol>
 
-<p>The _site directory is your generated public directory. You generally don&#39;t want to mess with generated files.</p>
+<p>The _site directory is your generated public directory. You generally don’t want to mess with generated files.</p>
 
-<p>Okay, now for the rest of the project...</p>
+<p>Okay, now for the rest of the project…</p>
 
 <p>The site generator creates a few very useful directories and files for you:</p>
 
 <ul>
-<li>_config.yml - This file contains basic info about your site. Open it up and fill in the blanks. You won&#39;t need to edit this one often.</li>
-<li>_posts directory - This is where you add your posts as markup files. I&#39;ll cover that in more detail in the next section</li>
-<li>about.md - This is what is sounds like. Fill this page in with the content for your about page.</li>
+  <li>_config.yml - This file contains basic info about your site. Open it up and fill in the blanks. You won’t need to edit this one often.</li>
+  <li>_posts directory - This is where you add your posts as markup files. I’ll cover that in more detail in the next section</li>
+  <li>about.md - This is what is sounds like. Fill this page in with the content for your about page.</li>
 </ul>
 
-<h2>Adding a Post</h2>
+<h2 id="adding-a-post">Adding a Post</h2>
 
-<p>If you&#39;re used to blogging with a rich text editor, you will need to shift your workflow a bit. If you feel uncomfortable whenever you have to leave your text editor or terminal, then this is the platform for you. Jekyll posts are just markup. I&#39;m using markdown, so I&#39;ll focus on that, but you can use also HTML or textile (with the proper extensions).</p>
+<p>If you’re used to blogging with a rich text editor, you will need to shift your workflow a bit. If you feel uncomfortable whenever you have to leave your text editor or terminal, then this is the platform for you. Jekyll posts are just markup. I’m using markdown, so I’ll focus on that, but you can use also HTML or textile (with the proper extensions).</p>
 
 <p>Writing a blog on a Jekyll site is as easy as adding a markup file to the _posts directory.</p>
 
 <p>A couple things to keep in mind:</p>
 
 <ul>
-<li><em>Your file name matters!</em> Start with the date in kebab case (YYYY-MM-DD) and continue with the file name, also connected with dashes. It should look like this:</li>
+  <li>
+    <p><em>Your file name matters!</em> Start with the date in kebab case (YYYY-MM-DD) and continue with the file name, also connected with dashes. It should look like this:</p>
+
+    <p><code class="highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+
+    <p>For example:</p>
+
+    <p><code class="highlighter-rouge">2016-01-27-ek-welcome-to-reason-about.md</code></p>
+  </li>
+  <li>
+    <p>Also, I’m not sure if I mentioned this before, but you should definitely, never ever edit anything in the _site directory</p>
+  </li>
 </ul>
 
-<p><code>YEAR-MONTH-DAY-title.MARKUP</code></p>
+<h2 id="inside-the-file">Inside the file:</h2>
 
-<p>For example:</p>
+<p>The first thing in every one of your posts will be “YAML front matter”. This is the metadata about the post and it’s really important. This post’s front matter looks like this:</p>
 
-<p><code>2016-01-27-ek-welcome-to-reason-about.md</code></p>
-
-<ul>
-<li>Also, I&#39;m not sure if I mentioned this before, but you should definitely, never ever edit anything in the _site directory</li>
-</ul>
-
-<h2>Inside the file:</h2>
-
-<p>The first thing in every one of your posts will be &quot;YAML front matter&quot;. This is the metadata about the post and it&#39;s really important. This post&#39;s front matter looks like this:</p>
-
-<p><img src="/assets/ek/2016/01/yaml-front-matter.png" alt="YAML front matter"></p>
+<p><img src="/assets/ek/2016/01/yaml-front-matter.png" alt="YAML front matter" /></p>
 
 <p>When you create a new post, make sure to include this section with the appropriate data.</p>
 
-<h2>Adding images and documents:</h2>
+<h2 id="adding-images-and-documents">Adding images and documents:</h2>
 
-<p>When you set up a file, you won&#39;t have a default place to store images and files, but the Jekyll docs recommend creating an assets folder. You will need to manually create a file structure inside of it to keep things organized. Our asset folder is organized by contributor, then year, then month.</p>
+<p>When you set up a file, you won’t have a default place to store images and files, but the Jekyll docs recommend creating an assets folder. You will need to manually create a file structure inside of it to keep things organized. Our asset folder is organized by contributor, then year, then month.</p>
 
-<p><img src="/assets/ek/2016/01/asset-folder.png" alt="YAML front matter"></p>
+<p><img src="/assets/ek/2016/01/asset-folder.png" alt="YAML front matter" /></p>
 
 <p><a href="http://jekyllrb.com/docs/posts/">Source</a></p>
 

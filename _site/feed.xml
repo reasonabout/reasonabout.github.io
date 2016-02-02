@@ -5,101 +5,195 @@
     <description>A blog that brings fresh insights from a bunch of curious web devs together in one space.</description>
     <link>http://reasonabout.co/</link>
     <atom:link href="http://reasonabout.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 31 Jan 2016 12:58:57 -0700</pubDate>
-    <lastBuildDate>Sun, 31 Jan 2016 12:58:57 -0700</lastBuildDate>
+<<<<<<< HEAD
+    <pubDate>Mon, 01 Feb 2016 21:44:00 -0700</pubDate>
+    <lastBuildDate>Mon, 01 Feb 2016 21:44:00 -0700</lastBuildDate>
+=======
+    <pubDate>Mon, 01 Feb 2016 21:51:01 -0700</pubDate>
+    <lastBuildDate>Mon, 01 Feb 2016 21:51:01 -0700</lastBuildDate>
+>>>>>>> 6c07eb8d3ea36d73e6696f3e75d2739fbe1cd302
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>How To Deploy To Firebase</title>
+        <description>&lt;p&gt;So, you&amp;#39;re awesome and want the world to know it? Watch out Earth, a new star is about to be born.
+Here is a simple, step-by-step instructional guide on how to deploy a front-end application to Firebase.&lt;/p&gt;
+
+&lt;p&gt;Note, this guide is for a front-end application with static files. It won&amp;#39;t go into deploying a server or database, or hooking up a database/server to the front-end app. This tutorial also assumes you to have a basic understanding of using your terminal.&lt;/p&gt;
+
+&lt;p&gt;Expect:
+* A couple pointers before you get rolling*
+* Step-by-step to deploying*
+* Solutions for common sticking points that trip people up*&lt;/p&gt;
+
+&lt;h2&gt;Slow Your Roll&lt;/h2&gt;
+
+&lt;p&gt;First thing&amp;#39;s first, you need an account on Firebase. So head over to &lt;a href=&quot;https://www.firebase.com/login/&quot;&gt;www.firebase.com/login&lt;/a&gt; to login with Google, Github, or an email/password combo.&lt;/p&gt;
+
+&lt;p&gt;Second, you will need Node.js and npm installed in order to make this work. I know that&amp;#39;s super annoying, but these are things you&amp;#39;ll be a using a ton if you aren&amp;#39;t already, so they&amp;#39;re worth the time. If you install node, npm automatically downloads with it. I suggest following the documentation &lt;a href=&quot;https://nodejs.org/en/download/package-manager/#osx&quot;&gt;here&lt;/a&gt;. At the risk of confusing you further, Homebrew is the easiest way to download Node. It&amp;#39;s a package manager, which is techy for it has a library of programs you can download straight from your terminal. No more downloading .exe files and running them from your desktop. You&amp;#39;re a developer now.&lt;/p&gt;
+
+&lt;p&gt;Next, we are going to download the CLI (Command Line Interface) tools. This is will be how you get your computer to talk to Firebase. If it gets confusing, head on over to the &lt;a href=&quot;https://www.firebase.com/docs/hosting/guide/deploying.html&quot;&gt;Getting Started documentation&lt;/a&gt; for another run through.&lt;/p&gt;
+
+&lt;p&gt;First, you will run the command:  &lt;code&gt;npm install -g firebase-tools&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;npm is a package manager that was downloaded with Node.js, and it runs and grabs the firebase-tools from the internet and installs it onto your computer. The -g is called the global flag, and gives npm some additional information on how exactly you want to download the firebase-tools program. There are other flags as well, but that is a little out of scope for this lesson. Downloading it with that flag will make sure that firebase-tools is available GLOBALLY to you in any project you create on your computer.&lt;/p&gt;
+
+&lt;h2&gt;How To Deploy Apps and Influence People&lt;/h2&gt;
+
+&lt;p&gt;Now that we have the pesky stuff out of the way, the fun begins.&lt;/p&gt;
+
+&lt;p&gt;First thing is first, you need to login to firebase-tools on the command line. You do this by running &amp;#39;firebase login&amp;#39; on your command line.&lt;/p&gt;
+
+&lt;p&gt;The login flow will vary slightly based on how you chose to signup to Firebase. If you gave it an email and password, you will enter those to login. Otherwise, a new tab will pop-up in your browser asking you to authorize the login.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/dl/2016/02/authorized.png&quot; alt=&quot;Firebase Authorization Complete&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Boom, we&amp;#39;re in.&lt;/p&gt;
+
+&lt;p&gt;Now, we have to tell Firebase what we want it to pull up to it&amp;#39;s servers. Make sure you&amp;#39;re in your project folder; this is where the index.html is going to be sitting. When you deploy to Firebase, it will pull everything in that folder up with it, and look for the index.html to serve up as the home page. Make sure the index.html is sitting in your current directory, and that your app isn&amp;#39;t pulling any files or assets from outside the folder, because they won&amp;#39;t be along for the ride and therefore, won&amp;#39;t show up when you check load the deployed site.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/dl/2016/02/files.png&quot; alt=&quot;Current Directory&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see from the screenshot, this folder I&amp;#39;m in now is perfect. It&amp;#39;s where the index is sitting, and all my assets are tucked safely within.&lt;/p&gt;
+
+&lt;p&gt;So, how do we get the ball rolling? By issuing the command:  &lt;code&gt;firebase init&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Firebase will ask what Firebase you want to use. This can get confusing, because the company is named Firebase, and each individual project you publish is called a &amp;quot;Firebase.&amp;quot; To cut confusion, I&amp;#39;ll try to be explicit when I refer to a Firebase project. If you initialized a Firebase project from the dashboard on the website, it will show up here as a list. Select the correct Firebase project. Otherwise, create a new one from the command line. Use the arrow keys to select which one you want, then hit enter. If you choose new, you have to type in the name of your new Firebase project.&lt;/p&gt;
+
+&lt;p&gt;The next part is the single trickiest part of the whole process. It asks what you want the public root to be. This is where Firebase will create the firebase.json, which we will cover more in a moment. This has to be the directory that the index.html is in. Remember earlier when you made sure you were running these commands while you were sitting in the project folder with the index.html in it? Tell Firebase that you want it deploy from your current folder by typing in:  &lt;code&gt;./&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/dl/2016/02/root.png&quot; alt=&quot;Public Folder Relative Path&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The first time I did this, I got confused and tried to type in an absolute path, and it didn&amp;#39;t work. Avoid my suffering.&lt;/p&gt;
+
+&lt;p&gt;So, if you type:  &lt;code&gt;ls&lt;/code&gt;   you should see that you now have a new file, called firebase.json.&lt;/p&gt;
+
+&lt;p&gt;You&amp;#39;re almost done. Next, you&amp;#39;re going to type: &lt;code&gt;firebase deploy&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This will only work when you&amp;#39;re sitting in the folder that has the firebase.json. It will push all your static files to their new home online.&lt;/p&gt;
+
+&lt;p&gt;Anytime you make stable changes, and are ready to publish them live, simply type in &lt;code&gt;firebase deploy&lt;/code&gt; and it will push everything again. It will republish all your files from scratch every time, so if you delete a file your project depends on and deploy again, the file will also disappear from your Firebase online and your app will break. It&amp;#39;s not a cumulative update like using Git.&lt;/p&gt;
+
+&lt;p&gt;From your command line, you can type &lt;code&gt;firebase open&lt;/code&gt; and it will open a new tab in your browser to your new site.&lt;/p&gt;
+
+&lt;p&gt;Bravo!&lt;/p&gt;
+
+&lt;p&gt;You can login to the Firebase dashboard and see all the apps you&amp;#39;re running and adjust their settings. They&amp;#39;ll let you see the deploy history for each one, and you can rollback to a previous deploy in case you break something.&lt;/p&gt;
+
+&lt;p&gt;In summary, pushing to firebase is easy peasy if you have firebase-tools installed:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;firebase init&lt;/code&gt;
+  &lt;code&gt;firebase deploy&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;That&amp;#39;s it!&lt;/p&gt;
+
+&lt;p&gt;By &lt;a href=&quot;https://github.com/dlinch&quot;&gt;Derik Linch&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Feb 2016 08:15:23 -0700</pubDate>
+        <link>http://reasonabout.co/firebase/2016/02/01/dl-how-to-host-a-frontend-app-on-firebase.html</link>
+        <guid isPermaLink="true">http://reasonabout.co/firebase/2016/02/01/dl-how-to-host-a-frontend-app-on-firebase.html</guid>
+        
+        <category>firebase,</category>
+        
+        <category>frontend</category>
+        
+        
+        <category>firebase</category>
+        
+      </item>
     
       <item>
         <title>Jekyll Blog</title>
         <description>&lt;p&gt;Creating this blog led me to learn a few things about how to set up a site with Jekyll. It only makes sense that I get meta with my first proper contribution and tell you how I did it.&lt;/p&gt;
 
-&lt;p&gt;In this post, I&amp;#39;ll cover:&lt;/p&gt;
+&lt;p&gt;In this post, I’ll cover:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Installing Jekyll and starting a project&lt;/li&gt;
-&lt;li&gt;Navigating around a Jekyll project&lt;/li&gt;
-&lt;li&gt;Adding a post&lt;/li&gt;
+  &lt;li&gt;Installing Jekyll and starting a project&lt;/li&gt;
+  &lt;li&gt;Navigating around a Jekyll project&lt;/li&gt;
+  &lt;li&gt;Adding a post&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Getting Started with Jekyll&lt;/h2&gt;
+&lt;h2 id=&quot;getting-started-with-jekyll&quot;&gt;Getting Started with Jekyll&lt;/h2&gt;
 
 &lt;p&gt;Here are all five of the steps to setting up a local Jekyll site:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;If you don&amp;#39;t have Ruby installed, install Ruby: &lt;code&gt;brew install ruby&lt;/code&gt; (OSX)&lt;/li&gt;
-&lt;li&gt;Install Jekyll: &lt;code&gt;gem install jekyll&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Create a Jekyll project locally: &lt;code&gt;jekyll new my-awesome-site&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Navigate into your new project: &lt;code&gt;cd my-awesome-site&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Serve your project locally: &lt;code&gt;jekyll serve&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;If you don’t have Ruby installed, install Ruby: &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install ruby&lt;/code&gt; (OSX)&lt;/li&gt;
+  &lt;li&gt;Install Jekyll: &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jekyll&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Create a Jekyll project locally: &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new my-awesome-site&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Navigate into your new project: &lt;code class=&quot;highlighter-rouge&quot;&gt;cd my-awesome-site&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Serve your project locally: &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;You will find your site running at: &lt;code&gt;http://localhost:4000&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You will find your site running at: &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:4000&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;I&amp;#39;m hosting this site on GitHub pages and redirecting to a custom domain. I&amp;#39;m not going to cover that today, but I will in a future post.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I’m hosting this site on GitHub pages and redirecting to a custom domain. I’m not going to cover that today, but I will in a future post.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h2&gt;Navigating around Jekyll&lt;/h2&gt;
+&lt;h2 id=&quot;navigating-around-jekyll&quot;&gt;Navigating around Jekyll&lt;/h2&gt;
 
 &lt;p&gt;This is what your project might look like:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/jekyll-structure.png&quot; alt=&quot;Jekyll Site Structure&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/jekyll-structure.png&quot; alt=&quot;Jekyll Site Structure&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Keep three things in mind as you start working in your Jekyll project:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;The _site directory is your generated public directory. You generally don&amp;#39;t want to mess with generated files.&lt;/p&gt;
+&lt;p&gt;The _site directory is your generated public directory. You generally don’t want to mess with generated files.&lt;/p&gt;
 
-&lt;p&gt;Okay, now for the rest of the project...&lt;/p&gt;
+&lt;p&gt;Okay, now for the rest of the project…&lt;/p&gt;
 
 &lt;p&gt;The site generator creates a few very useful directories and files for you:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;_config.yml - This file contains basic info about your site. Open it up and fill in the blanks. You won&amp;#39;t need to edit this one often.&lt;/li&gt;
-&lt;li&gt;_posts directory - This is where you add your posts as markup files. I&amp;#39;ll cover that in more detail in the next section&lt;/li&gt;
-&lt;li&gt;about.md - This is what is sounds like. Fill this page in with the content for your about page.&lt;/li&gt;
+  &lt;li&gt;_config.yml - This file contains basic info about your site. Open it up and fill in the blanks. You won’t need to edit this one often.&lt;/li&gt;
+  &lt;li&gt;_posts directory - This is where you add your posts as markup files. I’ll cover that in more detail in the next section&lt;/li&gt;
+  &lt;li&gt;about.md - This is what is sounds like. Fill this page in with the content for your about page.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Adding a Post&lt;/h2&gt;
+&lt;h2 id=&quot;adding-a-post&quot;&gt;Adding a Post&lt;/h2&gt;
 
-&lt;p&gt;If you&amp;#39;re used to blogging with a rich text editor, you will need to shift your workflow a bit. If you feel uncomfortable whenever you have to leave your text editor or terminal, then this is the platform for you. Jekyll posts are just markup. I&amp;#39;m using markdown, so I&amp;#39;ll focus on that, but you can use also HTML or textile (with the proper extensions).&lt;/p&gt;
+&lt;p&gt;If you’re used to blogging with a rich text editor, you will need to shift your workflow a bit. If you feel uncomfortable whenever you have to leave your text editor or terminal, then this is the platform for you. Jekyll posts are just markup. I’m using markdown, so I’ll focus on that, but you can use also HTML or textile (with the proper extensions).&lt;/p&gt;
 
 &lt;p&gt;Writing a blog on a Jekyll site is as easy as adding a markup file to the _posts directory.&lt;/p&gt;
 
 &lt;p&gt;A couple things to keep in mind:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Your file name matters!&lt;/em&gt; Start with the date in kebab case (YYYY-MM-DD) and continue with the file name, also connected with dashes. It should look like this:&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Your file name matters!&lt;/em&gt; Start with the date in kebab case (YYYY-MM-DD) and continue with the file name, also connected with dashes. It should look like this:&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;For example:&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2016-01-27-ek-welcome-to-reason-about.md&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Also, I’m not sure if I mentioned this before, but you should definitely, never ever edit anything in the _site directory&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;code&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;inside-the-file&quot;&gt;Inside the file:&lt;/h2&gt;
 
-&lt;p&gt;For example:&lt;/p&gt;
+&lt;p&gt;The first thing in every one of your posts will be “YAML front matter”. This is the metadata about the post and it’s really important. This post’s front matter looks like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;2016-01-27-ek-welcome-to-reason-about.md&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Also, I&amp;#39;m not sure if I mentioned this before, but you should definitely, never ever edit anything in the _site directory&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Inside the file:&lt;/h2&gt;
-
-&lt;p&gt;The first thing in every one of your posts will be &amp;quot;YAML front matter&amp;quot;. This is the metadata about the post and it&amp;#39;s really important. This post&amp;#39;s front matter looks like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/yaml-front-matter.png&quot; alt=&quot;YAML front matter&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/yaml-front-matter.png&quot; alt=&quot;YAML front matter&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;When you create a new post, make sure to include this section with the appropriate data.&lt;/p&gt;
 
-&lt;h2&gt;Adding images and documents:&lt;/h2&gt;
+&lt;h2 id=&quot;adding-images-and-documents&quot;&gt;Adding images and documents:&lt;/h2&gt;
 
-&lt;p&gt;When you set up a file, you won&amp;#39;t have a default place to store images and files, but the Jekyll docs recommend creating an assets folder. You will need to manually create a file structure inside of it to keep things organized. Our asset folder is organized by contributor, then year, then month.&lt;/p&gt;
+&lt;p&gt;When you set up a file, you won’t have a default place to store images and files, but the Jekyll docs recommend creating an assets folder. You will need to manually create a file structure inside of it to keep things organized. Our asset folder is organized by contributor, then year, then month.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/asset-folder.png&quot; alt=&quot;YAML front matter&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/asset-folder.png&quot; alt=&quot;YAML front matter&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/docs/posts/&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 
@@ -122,13 +216,13 @@
         <title>Welcome</title>
         <description>&lt;p&gt;Welcome to Reason About. This is a blog that brings fresh insights and information from about 30 new and continually learning web developers together in one space. Specifically, we are a group of soon-to-graduate full stack bootcamp students and instructors. More specifically, we are Galvanizers.&lt;/p&gt;
 
-&lt;h2&gt;What is Galvanize?&lt;/h2&gt;
+&lt;h2 id=&quot;what-is-galvanize&quot;&gt;What is Galvanize?&lt;/h2&gt;
 
-&lt;p&gt;In part, it&amp;#39;s a web dev bootcamp. There are many of them. Across the world these types of programs are releasing waves of developers into the wild every day. What makes us different is the entrepreneurial ecosystem that we learn in. We share a building with hundreds of startups at various stages in their growth and, by design, many of our learning experiences happen outside of our classroom.&lt;/p&gt;
+&lt;p&gt;In part, it’s a web dev bootcamp. There are many of them. Across the world these types of programs are releasing waves of developers into the wild every day. What makes us different is the entrepreneurial ecosystem that we learn in. We share a building with hundreds of startups at various stages in their growth and, by design, many of our learning experiences happen outside of our classroom.&lt;/p&gt;
 
-&lt;h2&gt;We are Curious&lt;/h2&gt;
+&lt;h2 id=&quot;we-are-curious&quot;&gt;We are Curious&lt;/h2&gt;
 
-&lt;p&gt;We are going through a primarily JavaScript based curriculum in our class, but we are curious and we find ourselves learning a lot of things that aren&amp;#39;t on the agenda. We will be using this space to share the discoveries that come from our classroom, the rabbit-holes we wander into and the other interesting parts of our lives.&lt;/p&gt;
+&lt;p&gt;We are going through a primarily JavaScript based curriculum in our class, but we are curious and we find ourselves learning a lot of things that aren’t on the agenda. We will be using this space to share the discoveries that come from our classroom, the rabbit-holes we wander into and the other interesting parts of our lives.&lt;/p&gt;
 
 &lt;p&gt;Please join us as we learn, teach and grow together.&lt;/p&gt;
 </description>
