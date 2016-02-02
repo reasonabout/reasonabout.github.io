@@ -2,7 +2,7 @@
 layout: post
 title:  "Npm Modules"
 comments: true
-date:   2016-02-02 10:00:00 -0700
+date:   2016-02-02 07:30:00 -0700
 author: Ben Allred
 categories: ['coding']
 tags: ['npm', 'javascript', 'open source']
