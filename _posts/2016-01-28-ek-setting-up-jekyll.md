@@ -3,7 +3,7 @@ layout: post
 title:  "Jekyll Blog"
 comments: true
 date:   2016-01-28 08:15:23 -0700
-author: Elana Kopelevich 
+author: Elana Kopelevich
 featured_image: /assets/ek/2016/01/jekyll.jpg
 categories: jekyll
 tags: jekyll
@@ -89,7 +89,7 @@ When you create a new post, make sure to include this section with the appropria
 
 ## Adding images and documents:
 
-When you set up a file, you won't have a default place to store images and files, but the Jekyll docs recommend creating an assets folder. You will need to manually create a file structure inside of it to keep things organized. Our asset folder is organized by contributor, then year, then month.
+When you set up a project, you won't have a default place to store images and files, but the Jekyll docs recommend creating an assets folder. You will need to manually create a file structure inside of it to keep things organized. Our asset folder is organized by contributor, then year, then month.
 
 ![YAML front matter](/assets/ek/2016/01/asset-folder.png)
 
