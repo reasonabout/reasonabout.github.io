@@ -28,7 +28,7 @@ Expect:
 
   First, you will run the command:  `npm install -g firebase-tools`
 
-  npm is a package manager that downloaded with Node.js, and it runs and grabs the firebase-tools from the internet and installs it onto your computer. The -g is called the global flag, and gives npm some additional information on how exactly you want to download the firebase-tools program. There are other flags as well, but that is a little out of scope for this lesson. Downloading it with that flag will make sure that firebase-tools is available GLOBALLY to you in any project you create on your computer.
+  npm is a package manager that was downloaded with Node.js, and it runs and grabs the firebase-tools from the internet and installs it onto your computer. The -g is called the global flag, and gives npm some additional information on how exactly you want to download the firebase-tools program. There are other flags as well, but that is a little out of scope for this lesson. Downloading it with that flag will make sure that firebase-tools is available GLOBALLY to you in any project you create on your computer.
 
 ## How To Deploy Apps and Influence People
   Now that we have the pesky stuff out of the way, the fun begins.
