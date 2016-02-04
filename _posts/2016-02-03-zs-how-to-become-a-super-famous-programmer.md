@@ -2,7 +2,7 @@
 layout: post
 title:  "How To Become A Super Famous Programmer in Seven Minutes, or Making Your First Open Source Contribution"
 comments: true
-date:   2015-02-03 00:00:00 -0700
+date:   2015-02-03 00:00:00 -0701
 author: Zac Smith
 featured_image: http://classiccinemaimages.com/wp-content/uploads/2013/01/Cary-Grant-1936.jpg
 categories: meta
