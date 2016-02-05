@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome"
 comments: true
-date:   2016-01-27 22:21:58 -0700
+date:   2016-01-27
 author: Elana Kopelevich
 featured_image: /assets/ek/2016/01/welcome.jpg
 categories: meta

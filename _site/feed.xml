@@ -5,9 +5,58 @@
     <description>Fresh insights and information from a group of full stack students (and their instructors)</description>
     <link>http://reasonabout.co/</link>
     <atom:link href="http://reasonabout.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 04 Feb 2016 15:47:10 -0700</pubDate>
-    <lastBuildDate>Thu, 04 Feb 2016 15:47:10 -0700</lastBuildDate>
+    <pubDate>Thu, 04 Feb 2016 17:52:11 -0700</pubDate>
+    <lastBuildDate>Thu, 04 Feb 2016 17:52:11 -0700</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>How To Become A Super Famous Programmer in Seven Minutes, or Making Your First Open Source Contribution</title>
+        <description>&lt;p&gt;On my bus ride home, I like to zone out and read the New York Times on my phone. But what about all those typos! I mean, how does that even happen? It’s the New York frickin’ Times!&lt;/p&gt;
+
+&lt;p&gt;The best I can do is send out &lt;a href=&quot;https://twitter.com/billyzacsmith/status/693249645124784128&quot;&gt;a hopelessly ineffectual tweet&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;But here’s one thing open source software has over the newspaper of record: when you run across something that’s broken, you can actually fix it! For serious! You, little old you, can actually fix the thing that bajillions of people use. Wow!&lt;/p&gt;
+
+&lt;p&gt;Let me tell you about a thing that happened yesterday. I was teaching myself Ruby on Rails, reading through the official documentation on their site. And there it was: a typo! Somebody totally forgot to put in an apostrophe! Whaaa! How is this even possible! I mean, this is &lt;em&gt;the&lt;/em&gt; Ruby on Rails?!?!&lt;/p&gt;
+
+&lt;p&gt;But then I remembered, hey, this is Open Source software! I can fix this!&lt;/p&gt;
+
+&lt;p&gt;Here’s how it works:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Find the repository for the project on GitHub and fork the repo. &lt;img src=&quot;/assets/zs/2016/02/fork.png&quot; alt=&quot;Fork&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt; it down to your computer.&lt;/li&gt;
+  &lt;li&gt;Make the change on your version.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git commit&lt;/code&gt; it with a nice message. It seems to be pretty standard to write “Fix typo.” Here’s what not to do: When I fixed a typo in the Angular docs, I wrote “Fixed up a tiny little typo, that wasn’t so bad, but, ya know, jus’ trying to help out, LOLZ!” They were like, “Um, yeah. Thanks for your contribution.” So just keep it short and not overly sweet.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; it to your repo. Now your changes are published to GitHub. We just need to notify the folks who manage the original repo. That’s what pull requests are for.&lt;/li&gt;
+  &lt;li&gt;Click “Make pull request.” &lt;img src=&quot;/assets/zs/2016/02/pull-request.png&quot; alt=&quot;Pull request&quot; /&gt; You’ll be prompted to review your change. Click the obvious stuff, and that’s it!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On these big projects, like Rails, there seems to be someone tasked with reviewing these little pull requests. They’ll take a look, and if they like your proposed change, they’ll merge it into the master code base. You’ll see something like this:
+&lt;img src=&quot;/assets/zs/2016/02/pull-request-merged.png&quot; alt=&quot;Merge notification&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Soak in the fame! Eat glory like it’s triple-stacked pancakes!&lt;/p&gt;
+
+&lt;p&gt;But in all seriousness, this is a good way to warm up to making contributions to real software. Plus, it’s good practice for when they open source the New York Times.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Originally published on &lt;a href=&quot;http://billyzac.github.io/2015/02/03/how-to-become-a-world-famous-programmer.html&quot;&gt;billyzac.github.io&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 03 Feb 2016 00:00:00 -0700</pubDate>
+        <link>http://reasonabout.co/meta/2016/02/03/zs-how-to-become-a-super-famous-programmer.html</link>
+        <guid isPermaLink="true">http://reasonabout.co/meta/2016/02/03/zs-how-to-become-a-super-famous-programmer.html</guid>
+        
+        <category>Galvanize,</category>
+        
+        <category>open</category>
+        
+        <category>source</category>
+        
+        
+        <category>meta</category>
+        
+      </item>
     
       <item>
         <title>Npm Modules</title>
@@ -55,7 +104,7 @@ A few minutes after this was merged into DeBunk, the following module was posted
 
 &lt;p&gt;By &lt;a href=&quot;https://www.github.com/skuttleman&quot;&gt;Ben Allred&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Tue, 02 Feb 2016 07:30:00 -0700</pubDate>
+        <pubDate>Tue, 02 Feb 2016 00:00:00 -0700</pubDate>
         <link>http://reasonabout.co/coding/2016/02/02/bda-npm-modules.html</link>
         <guid isPermaLink="true">http://reasonabout.co/coding/2016/02/02/bda-npm-modules.html</guid>
         
@@ -143,7 +192,7 @@ Here is a simple, step-by-step instructional guide on how to deploy a front-end 
 
 &lt;p&gt;By &lt;a href=&quot;https://github.com/dlinch&quot;&gt;Derik Linch&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 01 Feb 2016 08:15:23 -0700</pubDate>
+        <pubDate>Mon, 01 Feb 2016 00:00:00 -0700</pubDate>
         <link>http://reasonabout.co/firebase/2016/02/01/dl-how-to-host-a-frontend-app-on-firebase.html</link>
         <guid isPermaLink="true">http://reasonabout.co/firebase/2016/02/01/dl-how-to-host-a-frontend-app-on-firebase.html</guid>
         
@@ -255,7 +304,7 @@ Here is a simple, step-by-step instructional guide on how to deploy a front-end 
 
 &lt;p&gt;By &lt;a href=&quot;https://github.com/ekopelevich&quot;&gt;Elana Kopelevich&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 28 Jan 2016 08:15:23 -0700</pubDate>
+        <pubDate>Thu, 28 Jan 2016 00:00:00 -0700</pubDate>
         <link>http://reasonabout.co/jekyll/2016/01/28/ek-setting-up-jekyll.html</link>
         <guid isPermaLink="true">http://reasonabout.co/jekyll/2016/01/28/ek-setting-up-jekyll.html</guid>
         
@@ -280,7 +329,7 @@ Here is a simple, step-by-step instructional guide on how to deploy a front-end 
 
 &lt;p&gt;Please join us as we learn, teach and grow together.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 27 Jan 2016 22:21:58 -0700</pubDate>
+        <pubDate>Wed, 27 Jan 2016 00:00:00 -0700</pubDate>
         <link>http://reasonabout.co/meta/2016/01/27/ek-welcome-to-reason-about.html</link>
         <guid isPermaLink="true">http://reasonabout.co/meta/2016/01/27/ek-welcome-to-reason-about.html</guid>
         

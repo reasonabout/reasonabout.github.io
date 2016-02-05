@@ -2,7 +2,7 @@
 layout: post
 title:  "How To Deploy To Firebase"
 comments: true
-date:   2016-02-01 08:15:23 -0700
+date:   2016-02-01
 author: Derik Linch
 featured_image: /assets/dl/2016/02/firebase_branding.png
 categories: firebase

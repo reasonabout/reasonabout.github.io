@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Reason About</title>
+  <meta name="viewport" content="width=device-width">
+
+  <!-- syntax highlighting CSS -->
+  <link rel="stylesheet" href="/css/syntax.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="assets/main/favicon.png"  type="image/x-icon" />
+</head>
+<body>
+  <header style="background-image: url(http://classiccinemaimages.com/wp-content/uploads/2013/01/Cary-Grant-1936.jpg);">
+  <div class="container post-container">
+    <a href="/" class="home_button"></a>
+    <div class="inner-container">
+      <h1>How To Become A Super Famous Programmer in Seven Minutes, or Making Your First Open Source Contribution</h1>
+      <ul class="meta">
+        <li>
+          <span>
+            Published
+          </span>
+          03 Feb 2016
+        </li>
+        <li>
+          <span>
+            Category
+          </span>
+          meta
+        </li>
+      </ul>
+    </div>
+    <ul class="pagination">
+      
+        <li class="previous">
+          <a href="/coding/2016/02/02/bda-npm-modules.html">
+            Previous
+          </a>
+        </li>
+      
+      
+    </ul>
+  </div>
+</header>
+
+<article>
+  <div class="container">
+    <p>On my bus ride home, I like to zone out and read the New York Times on my phone. But what about all those typos! I mean, how does that even happen? It’s the New York frickin’ Times!</p>
+
+<p>The best I can do is send out <a href="https://twitter.com/billyzacsmith/status/693249645124784128">a hopelessly ineffectual tweet</a>.</p>
+
+<p>But here’s one thing open source software has over the newspaper of record: when you run across something that’s broken, you can actually fix it! For serious! You, little old you, can actually fix the thing that bajillions of people use. Wow!</p>
+
+<p>Let me tell you about a thing that happened yesterday. I was teaching myself Ruby on Rails, reading through the official documentation on their site. And there it was: a typo! Somebody totally forgot to put in an apostrophe! Whaaa! How is this even possible! I mean, this is <em>the</em> Ruby on Rails?!?!</p>
+
+<p>But then I remembered, hey, this is Open Source software! I can fix this!</p>
+
+<p>Here’s how it works:</p>
+
+<ul>
+  <li>Find the repository for the project on GitHub and fork the repo. <img src="/assets/zs/2016/02/fork.png" alt="Fork" /></li>
+  <li><code class="highlighter-rouge">git clone</code> it down to your computer.</li>
+  <li>Make the change on your version.</li>
+  <li><code class="highlighter-rouge">git commit</code> it with a nice message. It seems to be pretty standard to write “Fix typo.” Here’s what not to do: When I fixed a typo in the Angular docs, I wrote “Fixed up a tiny little typo, that wasn’t so bad, but, ya know, jus’ trying to help out, LOLZ!” They were like, “Um, yeah. Thanks for your contribution.” So just keep it short and not overly sweet.</li>
+  <li><code class="highlighter-rouge">git push</code> it to your repo. Now your changes are published to GitHub. We just need to notify the folks who manage the original repo. That’s what pull requests are for.</li>
+  <li>Click “Make pull request.” <img src="/assets/zs/2016/02/pull-request.png" alt="Pull request" /> You’ll be prompted to review your change. Click the obvious stuff, and that’s it!</li>
+</ul>
+
+<p>On these big projects, like Rails, there seems to be someone tasked with reviewing these little pull requests. They’ll take a look, and if they like your proposed change, they’ll merge it into the master code base. You’ll see something like this:
+<img src="/assets/zs/2016/02/pull-request-merged.png" alt="Merge notification" /></p>
+
+<p>Soak in the fame! Eat glory like it’s triple-stacked pancakes!</p>
+
+<p>But in all seriousness, this is a good way to warm up to making contributions to real software. Plus, it’s good practice for when they open source the New York Times.</p>
+
+<hr />
+
+<p>Originally published on <a href="http://billyzac.github.io/2015/02/03/how-to-become-a-world-famous-programmer.html">billyzac.github.io</a></p>
+
+
+    <script id="dsq-count-scr" src="//reasonabout.disqus.com/count.js" async></script>
+
+    
+    <div id="disqus_thread"></div>
+      <script type="text/javascript">
+      var disqus_shortname = 'reasonabout';
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+  </div>
+</article>
+
+</body>
+
+
+</html>
