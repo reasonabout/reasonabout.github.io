@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Welcome"
+title:  "Drinking from a fire hydrant"
 comments: true
-date:   2016-01-27
-author: Elana Kopelevich
-featured_image: /assets/ek/2016/01/welcome.jpg
+date:   2016-02-29
+author: David Shibley
+featured_image: /assets/ds/2016/01/thirsty.jpg
 categories: meta
 tags: Galvanize
 
