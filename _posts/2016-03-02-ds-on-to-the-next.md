@@ -4,7 +4,7 @@ title:  "O(n) to the next"
 comments: true
 date:   2016-03-02
 author: David Shibley
-featured_image: _site/assets/ds/2016/01/bigO.png
+featured_image: /assets/ds/2016/01/bigO.png
 categories: meta
 tags: Galvanize
 

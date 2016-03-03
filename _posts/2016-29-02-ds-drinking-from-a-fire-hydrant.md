@@ -4,7 +4,7 @@ title:  "Drinking from a fire hydrant"
 comments: true
 date:   2016-02-29
 author: David Shibley
-featured_image: _site/assets/ds/2016/01/thirsty.jpg
+featured_image: /assets/ds/2016/01/thirsty.jpg
 categories: meta
 tags: Galvanize
 
