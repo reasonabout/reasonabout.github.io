@@ -18,6 +18,8 @@ What is the big O? For a programmer, big O is a notation used to establish the e
 
 So what are the seven big O’s?
 
+`Constant - O(1)
+`
 `Logarithmic - O(logn)`
 
 `Linear - O(n)`
