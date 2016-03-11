@@ -9,7 +9,7 @@ categories: meta
 tags: Galvanize
 
 ---
-# Building in your own backyard
+## Building in your own backyard
 How to set up a simple JavaScript development environment on your on computer
 
 ## Welcome newcomers!
@@ -31,10 +31,10 @@ Attention: This Repo assumes OS X. Users of other platforms please refer to [thi
 Notice: ** This tutorial requires the use of the command line **
 
 If the command line is something that instils fear I have some resources to get familiar with it. The terminal however will be mandatory for some of this tutorial and will be require to make use of your development environment. I highly encourage you to get familiar with your command line. Here is some useful links that helped me get familiar with it:
-* [The Command Line Crash Course](http://cli.learncodethehardway.org/book/)
-* [The Command Line Cheat Sheet](https://github.com/0nn0/terminal-mac-cheatsheet/wiki/Terminal-Cheatsheet-for-Mac-(-basics-)
-* [The Command Line Help](http://www.explainshell.com/)
-* [The Command Line Mystery Game](https://github.com/veltman/clmystery/)
+  [The Command Line Crash Course](http://cli.learncodethehardway.org/book/)
+  [The Command Line Cheat Sheet](https://github.com/0nn0/terminal-mac-cheatsheet/wiki/Terminal-Cheatsheet-for-Mac-(-basics-)
+  [The Command Line Help](http://www.explainshell.com/)
+  [The Command Line Mystery Game](https://github.com/veltman/clmystery/)
 
 #### Text Editor
 You will want to have a text editor to work and write your code in. There is much debate about what editor is best and I believe it is purely preferential. With that said, here are the two most commonly used for development and their respective download links:
