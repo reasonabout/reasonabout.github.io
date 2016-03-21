@@ -5,9 +5,386 @@
     <description>Fresh insights and information from a group of full stack students (and their instructors)</description>
     <link>http://reasonabout.co/</link>
     <atom:link href="http://reasonabout.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Feb 2016 15:55:04 -0700</pubDate>
-    <lastBuildDate>Mon, 29 Feb 2016 15:55:04 -0700</lastBuildDate>
-    <generator>Jekyll v3.1.2</generator>
+    <pubDate>Sun, 20 Mar 2016 22:48:34 -0600</pubDate>
+    <lastBuildDate>Sun, 20 Mar 2016 22:48:34 -0600</lastBuildDate>
+    <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>Web Components are Neat</title>
+        <description>&lt;p&gt;Developers are lazy. At least the good ones are. Beyond that, we have too much to do and too little time. For both of these reasons, we are constantly searching for ways to use less effort to create more results and we do this by finding patterns in the way that we build things. We then use those patterns to invent ways to build those things faster.&lt;/p&gt;
+
+&lt;p&gt;These are some of the reasons that web components exist today and why they’re quickly becoming ubiquitous across the web. They’re still pretty new to me, but let me tell you what I know about them.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-exactly-are-web-components&quot;&gt;What exactly are Web Components?&lt;/h2&gt;
+
+&lt;p&gt;Web components are basically reusable UI elements. Made up of several different technologies, they make it easier for a developer to quickly build applications. This means that anyone can create a component, like a navbar or a search box, once and then use it over and over again with minimal effort. There are also libraries of prebuilt components that are ready to use and easy to customize if need be.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/03/web-components/legos-and-components.png&quot; alt=&quot;Legos&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;why-use-web-components&quot;&gt;Why use Web Components?&lt;/h2&gt;
+
+&lt;p&gt;I got right to the laziness issue and I touched on the fact that there isn’t enough time in the world to build everything that we need to build, but what about more concrete reasons?&lt;/p&gt;
+
+&lt;p&gt;Here are a few real problems that web components solve:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Undescriptive markup - Sure, we have HTML5 with its semantic markup that includes articles and asides, but how many of your app’s parts actually fit within the limited vocabulary of this developing standard? With web components, you can name the elements that you are going to use with a name that actually makes sense in your context.&lt;/li&gt;
+  &lt;li&gt;Style conflicts - The web component spec takes advantage of the shadow DOM (Which we will get to shortly) so that the scope of each component is isolated. It makes it possible to build more modular apps without the fear of breaking everything with a rogue style definition.&lt;/li&gt;
+  &lt;li&gt;No native template standards - We’ve been using all kinds of markup templating solutions and we all have our favorites, but the idea that web components will standardize an easier way to write fast markup will make life easier for everyone.&lt;/li&gt;
+  &lt;li&gt;No native bundling - I’ve mentioned that web components are made up of multiple technologies and I’ll get to those in the next section, but for now, know that a web component can effectively bundle HTML, CSS and JavaScript and you can import the entire thing with one simple import statement.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;the-four-technologies-of-web-components&quot;&gt;The Four Technologies of Web Components&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;templates - define inert reusable markup&lt;/li&gt;
+  &lt;li&gt;custom elements - extend HTML&lt;/li&gt;
+  &lt;li&gt;shadow DOM - provides encapsulation of markup and styling&lt;/li&gt;
+  &lt;li&gt;imports - support bundling html, javascript and CSS files&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Side note: these technologies are not yet supported in all major browsers. Chrome does have full native support and you can use polyfill libraries like &lt;a href=&quot;webcomponents.js&quot;&gt;webcomponents.js&lt;/a&gt; to implement web components in other browsers&lt;/p&gt;
+
+&lt;h2 id=&quot;templates&quot;&gt;Templates&lt;/h2&gt;
+
+&lt;p&gt;In this section, I’m going to introduce the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;template&amp;gt;&lt;/code&gt; tag, show you how to activate it and how to inject dynamic data.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-template-tag&quot;&gt;The Template Tag&lt;/h3&gt;
+
+&lt;p&gt;This is it:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&amp;lt;template&amp;gt; ... &amp;lt;/template&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+It looks like a regular HTML tag, but it’s special. All markup inside the template tag is inert until it is cloned and utilized on the page. The content is hidden from traditional selection techniques because it is not traversed like other DOM elements. In order to access the elements inside, you have to use the content property of the template.&lt;/p&gt;
+
+&lt;p&gt;You can place the template tag anywhere on the page (head, body, etc.). For example, I might make place a template block that looks like this right after my opening body tag:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&amp;lt;template id=&quot;my-template&quot;&amp;gt;
+		&amp;lt;p&amp;gt; I&#39;m coming from a template. &amp;lt;/p&amp;gt;
+	&amp;lt;/template&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+To activate the template, I use JavaScript. I need to target and select the template, clone it (meaning copy its content) and then append it to the page. The code would look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	var template = document.querySelector(#my-template);
+	var clone = document.importNode(template.content, true); 
+	document.body.appendChild(clone);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Passing &lt;code class=&quot;highlighter-rouge&quot;&gt;template.content&lt;/code&gt; in as the first parameter of the &lt;code class=&quot;highlighter-rouge&quot;&gt;importNode&lt;/code&gt; method clones the content of the template. The second parameter of &lt;code class=&quot;highlighter-rouge&quot;&gt;importNode&lt;/code&gt; determines whether it is a deep copy.&lt;/p&gt;
+
+&lt;p&gt;All together now…&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&amp;lt;template&amp;gt;
+		&amp;lt;p&amp;gt; I&#39;m coming from a template. &amp;lt;/p&amp;gt;
+	&amp;lt;/template&amp;gt;
+	
+	&amp;lt;script&amp;gt; 
+		var template = document.querySelector(&#39;#my-template&#39;);
+		var clone = document.importNode(template.content, true);
+		document.body.appendChild(clone);
+	&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;inject-dynamic-data-into-templates&quot;&gt;Inject Dynamic Data into Templates&lt;/h3&gt;
+
+&lt;p&gt;You can inject data before cloning the template’s content by manipulating the template clone. First, you would get a reference to the template, then use &lt;code class=&quot;highlighter-rouge&quot;&gt;document.importNode&lt;/code&gt; to clone the template’s content. Next, change the target element within the template as desired and, finally, append the element to the page. For example:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&amp;lt;template&amp;gt;
+		&amp;lt;p&amp;gt;Ducks are &amp;lt;span class=&quot;adjective&quot;&amp;gt;&amp;lt;/span&amp;gt;!&amp;lt;/p&amp;gt;
+	&amp;lt;/template
+	
+	&amp;lt;button onclick=&quot;copyTemplate()&quot;&amp;gt;Copy Template&amp;lt;/button&amp;gt;
+	
+	&amp;lt;script&amp;gt;
+		function copyTemplate() {
+			var template = document.querySelector(&#39;template&#39;);
+			var clone = document.importNode(template.content, true);
+			clone.querySelector(&#39;.adjective&#39;).textContent = &#39;awesome&#39;;
+			document.body.appendChild(clone);
+		}	
+	&amp;lt;/script&amp;gt;	
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;		
+This code will append this paragraph to the page:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	Ducks are awesome!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;custom-elements&quot;&gt;Custom Elements&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/03/web-components/lego-car.png&quot; alt=&quot;Legos&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Custom elements are a newish way of creating your own HTML tags and elements. They are part of web components but can be used on their own and there are a couple ways to implement them. You can either define your own HTML element (note that the name must have a dash -think of the first dash as a namespace) or extend existing elements by adding an ‘is’ attribute. For example:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&amp;lt;input type=&quot;text&quot; is=&quot;search&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;register-and-use-custom-elements&quot;&gt;Register and Use Custom Elements&lt;/h3&gt;
+
+&lt;p&gt;Register and use custom element with a simple three step process:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a prototype for the custom element:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; var custom-element = Object.create(HTMLElement.prototype);
+ //Add properties and functions to prototype here
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;&lt;br /&gt;
+ Note that when creating new custom elements with the &lt;code class=&quot;highlighter-rouge&quot;&gt;Object.create&lt;/code&gt; method, the parameter that you pass in will usually be &lt;code class=&quot;highlighter-rouge&quot;&gt;HTMLElement.prototype&lt;/code&gt; since custom elements are derived from a prototype. The exception is when you are extending an HTML element - in that case you would pass that element prototype in as an argument instead.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Register the element via the registerElement method:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;document.registerElement(&#39;custom-element&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Use it: Add to DOM or place tag on the page&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; document.body.appendChild(new customElement());
+	
+ or 
+	
+ &amp;lt;custom-comment/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;instatiate-custom-elements&quot;&gt;Instatiate Custom Elements&lt;/h3&gt;
+
+&lt;p&gt;There are four different ways to instantiate a Custom Element&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a tag in the markup&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;lt;custom-comment /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;new Operator (You would need to append it to the DOM seperately)&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; var comment = new customComment();
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;createElement&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; var comment = document.createElement(&#39;custom-comment&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;innerHTML&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; el.innerHTML = &#39;&amp;lt;custom-comment /&amp;gt;;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;shadow-dom&quot;&gt;Shadow DOM&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/03/web-components/shadow-guard.png&quot; alt=&quot;Legos&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, we get to the Shadow DOM! How exciting! The shadow DOM provides encapsulation for the JavaScript, CSS and templating in a Web Component. A Shadow DOM makes it so these things remain separate from the DOM of the main document.  A Shadow DOM must always be attached to an existing element.&lt;/p&gt;
+
+&lt;p&gt;Before moving on, take a minute to open the settings in your browser Dev Tools. Under ‘Elements’, click on ‘Show user agent Shadow DOM’. This will allow you to see the shadow DOM of native controls.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/03/web-components/show-shadow-dom.png&quot; alt=&quot;Legos&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And, before we move on together, let me introduce some vocabulary so we are sure we can be sure that we are speaking the same language.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;light DOM - the standard DOM - what you see on the page&lt;/li&gt;
+  &lt;li&gt;shadow DOM - hides away complexity&lt;/li&gt;
+  &lt;li&gt;logical DOM  - umbrella term that covers both light and shadow DOM&lt;/li&gt;
+  &lt;li&gt;shadow root - the root node of a shadow tree&lt;/li&gt;
+  &lt;li&gt;shadow host - the element in the light DOM that hosts the shadow DOM&lt;/li&gt;
+  &lt;li&gt;shadow boundry - 	encapsulates styling rules that are defined within a given piece of the shadow DOM (there are some ways to get around this.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Got that? Great. Let’s create a Shadow DOM.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-a-shadow-dom&quot;&gt;Create a Shadow DOM&lt;/h3&gt;
+
+&lt;p&gt;It’s another three step process:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Select a shadow host&lt;/li&gt;
+  &lt;li&gt;Create a shadow root&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add elements (the same way that you append elements to the light DOM)&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;lt;template&amp;gt;
+     &amp;lt;h1&amp;gt;Hello world from the shadow DOM&amp;lt;/h1&amp;gt;
+ &amp;lt;/template&amp;gt;
+	
+ &amp;lt;div id=&quot;host&amp;gt;
+     &amp;lt;script&amp;gt;
+         var host = document.querySelector(&#39;template&#39;);
+         var root = host.createShadowRoot();
+         root.appendChild(document.importNode(template.content, true));
+     &amp;lt;/script&amp;gt;
+ &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;
+As the Shadow DOM encapsulates its own elements and their styles, regular styling will not work on the shadow DOM. You can, however, define styles within the template tag that will only affect the shadow DOM. JavaScript, on the other hand, is not encapsulated in the Shadow DOM. Any Javascript that is defined within the tempate tag will still be traversed and manipulated with the light DOM and be attached to the window element. The markup inside the shadow DOM is still protected from JavaSript manipulation because it cannot be traversed with traditional selection methods. You can use IIFEs to encapsulate code.&lt;/p&gt;
+
+&lt;h2 id=&quot;imports&quot;&gt;Imports&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/03/web-components/lego-imports.png&quot; alt=&quot;Legos&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Both templates and imports are a way to store inert HTML, but imports have two unique qualities:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;They support storing HTML in another file&lt;/li&gt;
+  &lt;li&gt;They support bundling HTML, CSS and JavaScript&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;using-imports&quot;&gt;Using Imports&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&amp;lt;link rel=&quot;import&quot; href=&quot;component.html&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+This code brings in everything that is in the  ‘import location’ identified by the href attribute in the link tag. Imported HTML is inert until you clone it onto the page. Imported JavaScript and CSS are applied immediately	.&lt;/p&gt;
+
+&lt;h1 id=&quot;now-what&quot;&gt;Now What?&lt;/h1&gt;
+
+&lt;p&gt;This was just the beginning. Hopefully you have a better understanding of what a web component is and what it’s made of. There is a lot more studying to.&lt;/p&gt;
+
+&lt;p&gt;Check out these resources for more info:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Web_Components&quot;&gt;MDN&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://webcomponents.org/&quot;&gt;WebComponents.org&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.polymer-project.org/1.0/&quot;&gt;Polymer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Have you used web components in any of your projects? What has your experience been?&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 20 Mar 2016 00:00:00 -0600</pubDate>
+        <link>http://reasonabout.co/web-components/2016/03/20/ek-web-components.html</link>
+        <guid isPermaLink="true">http://reasonabout.co/web-components/2016/03/20/ek-web-components.html</guid>
+        
+        <category>web</category>
+        
+        <category>components,</category>
+        
+        <category>polymer</category>
+        
+        
+        <category>Web-Components</category>
+        
+      </item>
+    
+      <item>
+        <title>O(n) to the next</title>
+        <description>&lt;h2 id=&quot;on-to-the-next&quot;&gt;O(n) to the next.&lt;/h2&gt;
+&lt;p&gt;An intro to big O notation.&lt;/p&gt;
+
+&lt;p&gt;What is the big O? For a programmer, big O is a notation used to establish the efficiency of a given function. By simply knowing seven different types of big O’s and how they relate with each other you can figure out the performance cost of pretty much any code set. Big O is based on upper limits, meaning if we are counting the possible outcomes of a scenario it only cares about the worst case scenario. Which means coders can control the “cost” of their app simply by choosing one type of function over another.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-seven-sisters&quot;&gt;The seven sisters&lt;/h3&gt;
+
+&lt;p&gt;So what are the seven big O’s?&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Constant - O(1)
+&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Logarithmic - O(logn)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Linear - O(n)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Linearithmic - O(n logn)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Polynomial - O(n^2)
+&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Exponential - O(2^n)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Factorial -O(n!)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ds/2016/03/complexity.png&quot; alt=&quot;Current Directory&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Umm, WTF David….
+Ok, I’m sorry. I said all you needed to know was those seven things but I’m sure they make no sense at this point if you have never seen them. Not to mention its syntax is reminiscent of daily bouts of second period math anxiety, pop tarts and the smell of the weird kid that sat next to you. Perhaps a slightly closer look at each will dissolve some of that anxiety. So to those of you that didn’t hit the back button as soon as I started mashing numbers with letters, thank you. Now prepare to dive into the crazy world of upper limits. Hold onto your butts. . .&lt;/p&gt;
+
+&lt;h3 id=&quot;constant&quot;&gt;Constant&lt;/h3&gt;
+
+&lt;p&gt;The first sister, Constant is pretty straight forward. Since big O is used by programmers to evaluate the worst case scenario for performance of a function, the constant represents a scenario where there is only a set possible outcome. Meaning if we have a sorted array of colors &lt;code class=&quot;highlighter-rouge&quot;&gt;[red, blue, green, yellow, orange]&lt;/code&gt; and we want to select yellow, it would take only once to select yellow since it is in the fourth spot of the array we can select it by its position. This is the fastest possible performance.  It is practically instantaneous.&lt;/p&gt;
+
+&lt;h3 id=&quot;logarithmic&quot;&gt;Logarithmic&lt;/h3&gt;
+
+&lt;p&gt;As the second sister, Logarithmic sits right on the shoulders of her other sister. The two when graphed are so similar that you can not physically tell a difference. Mathematically there is an obvious distinction. With &lt;code class=&quot;highlighter-rouge&quot;&gt;O(logn)&lt;/code&gt; we are dealing with binary evaluating a sorted array with a binary search or a balanced search tree, as well as all operations in a binomial heap. Ok I know, total WTF moment again and I apologize. That was the technical definition. What does that mean in terms that we normal human beings can understand? I will do my best to translate. Simple definition, &lt;code class=&quot;highlighter-rouge&quot;&gt;O(logn)&lt;/code&gt; deals with data sets similar in example to a sorted binary tree and the worse case scenario of selecting an item from that tree. Even simpler: Binary tree just means a tree graph in which any one node (piece of data, represented by the circles) can only have only one parent, one sibling and up to two children.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ds/2016/03/btree.png&quot; alt=&quot;Current Directory&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Why is this &lt;code class=&quot;highlighter-rouge&quot;&gt;O(logn)&lt;/code&gt; and how is it basically the same graphically as &lt;code class=&quot;highlighter-rouge&quot;&gt;O(1)&lt;/code&gt;? Selecting an item from a sorted binary tree graph is a lot like taking a whole pie and cutting it in half and figuring out which half you want to keep, then you cut the half you kept into quarters and decide which quarter you want to keep and then again into eighths and continue until you have found the pie size you want. With binary trees if you want the bigger half you evaluate to the right and if you want the smaller piece you evaluate to the left.&lt;/p&gt;
+
+&lt;p&gt;Consider the tree graph above. If we wanted to select the number seven we would first start at the top and evaluate if eight is the number we were looking for. It is not so next check to see if eight is greater than or less than seven (the number that we are trying to select). Since the number seven is less than eight, we will know that seven must exist on the left side of the tree so we evaluate the left child. Seven is greater than three however so we will evaluate its right child which in this case is six. Since seven is greater than six we evaluate to the right and find seven, the node we wanted. This type of computation is the second most performant and also practically instantaneous.&lt;/p&gt;
+
+&lt;h3 id=&quot;linear&quot;&gt;Linear&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;O(n)&lt;/code&gt; is the first middle sister and she comes with the popularity to prove it. Linear computations are extremely common in programming. One of the first functions people learn when beginning to code is a for loop. If you have done this, you have done a linear computation. Graphically speaking, linear means a constant slope or a steady rise over run. Ringing some dusty bells? From a programming perspective we make an equation whose worst possible performance outcome increases at a steady rate. For loops are a great example of a linear computation because it literally is saying “for every (blank) do (blank) which computationally says giving n number of items the worst possible outcome would be n number of times. More clearly &lt;code class=&quot;highlighter-rouge&quot;&gt;O(n)&lt;/code&gt; means if we wanted to select an item from an unsorted array where the worst possible outcome would be having to check every item in the array before you found the one you want. If we were looking for seven in this array it would take us looking through every number before we found seven &lt;code class=&quot;highlighter-rouge&quot;&gt;[1,5,3,9,8,4,6,2,7]&lt;/code&gt;. I guess by that definition, finding my keys tends to be a O(n) computation because they always seem to be in the last place I look.&lt;/p&gt;
+
+&lt;h3 id=&quot;linearithmic&quot;&gt;Linearithmic&lt;/h3&gt;
+
+&lt;p&gt;As the second middle sister, Linearithmic is an interesting one. She challenges the world to look differently, to see how interaction with others can have an affect. Linearithmic computations are the first on the compounded computations. This just means that you are doing more than one computation and you are looking at the multiplication of those computations. An example of this would be if you had a for loop &lt;code class=&quot;highlighter-rouge&quot;&gt;O(n)&lt;/code&gt; and inside of that for loop you were checking every time for a specific node in a binary tree &lt;code class=&quot;highlighter-rouge&quot;&gt;O(logn)&lt;/code&gt; we would express this mathematically as &lt;code class=&quot;highlighter-rouge&quot;&gt;O(n) * O(logn) = O(n logn)&lt;/code&gt;. It is important to note that this is the world that sorts live in. For more on sorts or any questions feel free to reach out to me.&lt;/p&gt;
+
+&lt;h3 id=&quot;polynomial&quot;&gt;Polynomial&lt;/h3&gt;
+
+&lt;p&gt;Let’s affectionately refer to her as Poly. Poly learned from her big sis Linearithmic. Poly understood the importance of knowing the relationship between multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;O(n)&lt;/code&gt; computations. This is much like with Linearithmic computations but instead of multiplying &lt;code class=&quot;highlighter-rouge&quot;&gt;O(logn)&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;O(n)&lt;/code&gt; we are multiplying &lt;code class=&quot;highlighter-rouge&quot;&gt;O(n)&lt;/code&gt; to other &lt;code class=&quot;highlighter-rouge&quot;&gt;O(n)&lt;/code&gt;’s. Mathematically it looks like this: &lt;code class=&quot;highlighter-rouge&quot;&gt;O(n) * O(n) = O(n^2)&lt;/code&gt;. Reference the complexity graph above and look for the teal colored line. That my friends, is Polly. Since she grows at an exponential rate, the number of computations per element &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt; reaches an unstable quantity pretty quickly. At about thirty elements, &lt;code class=&quot;highlighter-rouge&quot;&gt;n = 30&lt;/code&gt;, you have to do nine hundred computations and at &lt;code class=&quot;highlighter-rouge&quot;&gt;n = 40&lt;/code&gt; we have to make sixteen hundred computations. Increases like that are BAD for computers, you want to limit these kind of algorithms as much as possible. An example of a &lt;code class=&quot;highlighter-rouge&quot;&gt;O(n^2)&lt;/code&gt; equation would be a nested for statement.&lt;/p&gt;
+
+&lt;p&gt;Grab your totems cause we are about to get all Inception on this. Imagine a for statement within a for statement. That would be &lt;code class=&quot;highlighter-rouge&quot;&gt;n^2&lt;/code&gt;. If you went another layer deeper you get a for loop within a for loop within a for loop or &lt;code class=&quot;highlighter-rouge&quot;&gt;n^3&lt;/code&gt; and so on and so forth. At &lt;code class=&quot;highlighter-rouge&quot;&gt;O(n^3)&lt;/code&gt; or three nested for loops, when &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt; is 100 we would need to make a million computations in the worst case scenario to find the item we want. This sounds like a lot, do a million math problems? Ef that. The computer however can do that many computations pretty quickly depending on the speed of the computer. For instance, ever wondered what the numbers on a processor spec means? Ever bragged about your computer or phone “well my new phone is the (some phone) and it has a (some number) Ghz processor”. What you are bragging about is the amount of computations your device can make. G refers to gigs and hz means per second. Gigs is short for gigabyte or one billion bytes, eight bits to a byte and each can be represented as a computation. So for a device with a 1.2 Ghz processor and a x64 processor, it theoretically can handle &lt;strong&gt;76.8 billion computations per second!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;exponential--factorial&quot;&gt;Exponential &amp;amp; Factorial&lt;/h3&gt;
+
+&lt;p&gt;Computers these days are fast, but they all do have limits. Exponential and Factorial are fraternal twins and the babies of the family. They are generally not enjoyable to deal with, think . These computations break those limits very very quickly. The expressions themselves have limits as well. We call those limits to infinity or the limit as, in this case number of computations, approaches infinity. If you look again to the complexity graph, look for the orange and the sky-blue lines. Those are the exponential and factorial graphs. See how the lines go basically vertical? The vertical lines just get infinitely closer to perfectly vertical but never quite reach it. The interesting thing about these kinds of computations is that in theory, no computer in the world no matter its performance could compute exponentially or factorially beyond a certain number and we can see that visually on the graph. Writing code that uses either of these computations would be volatile and not recommended. Luckily we would rarely see this kind of computation in programming.&lt;/p&gt;
+
+&lt;p&gt;Thank you for checking out my blog on big O notation. If you have any questions, corrections or just wanna nerd out with me feel free to contact me. Also if you have requests for a specific blog topic I will try to get to it.&lt;/p&gt;
+
+&lt;p&gt;-&lt;a href=&quot;davidjshibley@gmail.com&quot;&gt;David Shibley&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;davidjshibley@gmail.com&quot;&gt;Email&lt;/a&gt;&lt;br /&gt;
+ &lt;a href=&quot;https://twitter.com/D_Shibs&quot;&gt;@D_Shibs&lt;/a&gt;&lt;br /&gt;
+ &lt;a href=&quot;https://www.linkedin.com/in/davidshibley&quot;&gt;in/David-Shibley&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 02 Mar 2016 00:00:00 -0700</pubDate>
+        <link>http://reasonabout.co/meta/2016/03/02/ds-on-to-the-next.html</link>
+        <guid isPermaLink="true">http://reasonabout.co/meta/2016/03/02/ds-on-to-the-next.html</guid>
+        
+        <category>Galvanize</category>
+        
+        
+        <category>meta</category>
+        
+      </item>
     
       <item>
         <title>Drinking from a fire hydrant</title>
@@ -23,7 +400,7 @@
 &lt;p&gt;“I am not and will not ever be, a computer nerd” I am sure I have said at some point in the past, if not I’m sure I thought it. Once, my high school calculus teacher told me to go into programming because of my love for videos games and my ability to keep up in her class… to which I believe I said something like  “Yeah, not my thing sorry, thanks though.” I mistakenly had this belief that in order to be a coder you had to meet the following criteria: eat cheese puffs; drink diet coke; be fat; pimply; greasy; white; male; live in mom’s basement; have no relationships and no hobbies. Unfortunately, as a seventeen year old boy born and raised in southern California, this is what my culture taught me programming equated to. I also had this sad misunderstanding that software and hardware was interchangeable and if you knew one you knew the other. Then in college I studied Environmental Science at Humboldt State University. For those of you unfamiliar with what that implies, it is one of the Hippy-est of Hippy-sciences… at the Harvard of Hippy-Schools. At this point in my life there was no visible connection that would have shown a path leading to where I am today. Fast forward three jobs, four deaths, three romantic relationships and eight years later and we get&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;(Denver, Code) =&amp;gt; Love;&lt;/p&gt;
+  &lt;p&gt;(Denver, Code) =&amp;gt; Love&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;During those eight years I spent some years in college, some years pursuing an entrepreneurship and some years climbing the corporate ladder.  None of which lead me to happiness. I wasn’t sure where I would find happiness but it didn’t seem to be in any of the directions I went. I came to believe the missing element was art. I wasn’t happy because I hadn’t found my art form yet. I was never very good musically, I enjoyed writing but never to a point that I obsessed about it or it brought me great joy. The closest thing I had found to art at this point was bartending. I could craft drinks tailored to people and it was much like art, but it never said “with this, I can change the world”. Then I found my artform, it was programming. With programming I could build something from nothing, I could bring to life a thought, a vision, an idea. I felt like a wizard; give a specific command and make something happen in a seemingly magical manor.&lt;/p&gt;
@@ -206,22 +583,22 @@ Exhibit B.&lt;/p&gt;
 
 &lt;p&gt;My module’s code is open source on &lt;a href=&quot;https://www.github.com/skuttleman/debunk&quot;&gt;github&lt;/a&gt;, and some of my friends submitted contributions to the repository to add similarly useless lines of code. Each of them made me laugh, and I hope they had as much fun contributing them as I had making the module. My favorite of these, was the following:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;doesItEqualThree&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;yes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;no&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;doesItEqualSeventeen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;17&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;yes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;no&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;js
+doesItEqualThree: function(input){
+  if(input === 3) {
+    return &quot;yes&quot;;
+  } else {
+    return &quot;no&quot;;
+  }
+},
+doesItEqualSeventeen: function(input){
+  if(input === 17) {
+    return &quot;yes&quot;;
+  } else {
+    return &quot;no&quot;;
+  }
+}
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;What makes this contribution particularly enjoyable is not how useless it is - though it is remarkably useless -, but rather what happened next.
 A few minutes after this was merged into DeBunk, the following module was posted by the author of the code above in response to itself:  &lt;a href=&quot;https://www.npmjs.com/package/destupidify&quot;&gt;Destupidify&lt;/a&gt;. Oh, the layers. I laughed for years. I have the best friends.&lt;/p&gt;

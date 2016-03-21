@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Reason About</title>
+  <meta name="viewport" content="width=device-width">
+
+  <!-- syntax highlighting CSS -->
+  <link rel="stylesheet" href="/css/syntax.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="assets/main/favicon.png"  type="image/x-icon" />
+</head>
+<body>
+  <header style="background-image: url(/assets/ek/2016/03/web-components.jpg);">
+  <div class="container post-container">
+    <a href="/" class="home_button"></a>
+    <div class="inner-container">
+      <h1>Web Components are Neat</h1>
+      <ul class="meta">
+        <li>
+          <span>
+            Published
+          </span>
+          20 Mar 2016
+        </li>
+        <li>
+          <span>
+            Category
+          </span>
+          meta
+        </li>
+      </ul>
+    </div>
+    <ul class="pagination">
+      
+        <li class="previous">
+          <a href="/meta/2016/03/02/ds-on-to-the-next.html">
+            Previous
+          </a>
+        </li>
+      
+      
+    </ul>
+  </div>
+</header>
+
+<article>
+  <div class="container">
+    <p>Developers are lazy. At least the good ones are. Beyond that, we have too much to do and too little time. For both of these reasons, we are constantly searching for ways to use less effort to create more results and we do this by finding patterns in the way that we build things. We then use those patterns to invent ways to build those things faster.</p>
+
+<p>These are some of the reasons that web components exist today and why they’re quickly becoming ubiquitous across the web. They’re still pretty new to me, but let me tell you what I know about them.</p>
+
+<h2 id="what-exactly-are-web-components">What exactly are Web Components?</h2>
+
+<p>Web components are basically reusable UI elements. Made up of several different technologies, they make it easier for a developer to quickly build applications. This means that anyone can create a component, like a navbar or a search box, once and then use it over and over again with minimal effort. There are also libraries of prebuilt components that are ready to use and easy to customize if need be.</p>
+
+<h2 id="why-use-web-components">Why use Web Components?</h2>
+
+<p>I got right to the laziness issue and I touched on the fact that there isn’t enough time in the world to build everything that we need to build, but what about more concrete reasons?</p>
+
+<p>Here are a few real problems that web components solve:</p>
+
+<ul>
+  <li>Undescriptive markup - Sure, we have HTML5 with its semantic markup that includes articles and asides, but how many of your app’s parts actually fit within the limited vocabulary of this developing standard? With web components, you can name the elements that you are going to use with a name that actually makes sense in your context.</li>
+  <li>Style conflicts - The web component spec takes advantage of the shadow DOM (Which we will get to shortly) so that the scope of each component is isolated. It makes it possible to build more modular apps without the fear of breaking everything with a rogue style definition.</li>
+  <li>No native template standards - We’ve been using all kinds of markup templating solutions and we all have our favorites, but the idea that web components will standardize an easier way to write fast markup will make life easier for everyone.</li>
+  <li>No native bundling - I’ve mentioned that web components are made up of multiple technologies and I’ll get to those in the next section, but for now, know that a web component can effectively bundle HTML, CSS and JavaScript and you can import the entire thing with one simple import statement.</li>
+</ul>
+
+<h2 id="the-four-technologies-of-web-components">The Four Technologies of Web Components</h2>
+
+<ol>
+  <li>templates - define inert reusable markup</li>
+  <li>custom elements - extend HTML</li>
+  <li>shadow DOM - provides encapsulation of markup and styling</li>
+  <li>imports - support bundling html, javascript and CSS files</li>
+</ol>
+
+<p>Side note: these technologies are not yet supported in all major browsers. Chrome does have full native support and you can use polyfill libraries like <a href="webcomponents.js">webcomponents.js</a> to implement web components in other browsers</p>
+
+<h2 id="templates">Templates</h2>
+
+<p>In this section, I’m going to introduce the <code class="highlighter-rouge">&lt;template&gt;</code> tag, show you how to activate it and how to inject dynamic data.</p>
+
+<h3 id="the-template-tag">The Template Tag</h3>
+
+<p>This is it:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	&lt;template&gt; ... &lt;/template&gt;
+</code></pre>
+</div>
+
+<p>&lt;/br&gt;</p>
+
+<p>It looks like a regular HTML tag, but it’s special. All markup inside the template tag is inert until it is cloned and utilized on the page. The content is hidden from traditional selection techniques because it is not traversed like other DOM elements. In order to access the elements inside, you have to use the content property of the template.</p>
+
+<p>You can place the template tag anywhere on the page (head, body, etc.). For example, I might make place a template block that looks like this right after my opening body tag:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	&lt;template id="my-template&gt;
+		&lt;p&gt; I'm coming from a template &lt;/p&gt;
+	&lt;/template&gt; 
+</code></pre>
+</div>
+
+<p>&lt;/br&gt;</p>
+
+<p>Next, to activate the template, I use JavaScript. I need to target and select the template, clone it (meaning copy its content) and then append it to the page. The code would look like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var template = document.querySelector(#my-template);
+var clone = document.importNode(template.content, true); 
+document.body.appendChild(clone);
+</code></pre>
+</div>
+
+<p>&lt;/br&gt;</p>
+
+<p>Passing <code class="highlighter-rouge">template.content</code> in as the first parameter of the <code class="highlighter-rouge">importNode</code> method clones the content of the template. The second parameter of <code class="highlighter-rouge">importNode</code> determines whether it is a deep copy.</p>
+
+<p>All together now…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+	&lt;p&gt; I'm coming from a template &lt;/p&gt;
+&lt;/template&gt;
+
+&lt;script&gt; 
+	var template = document.querySelector('#my-template');
+	var clone = document.importNode(template.content, true);
+	document.body.appendChild(clone);
+&lt;/script&gt;
+</code></pre>
+</div>
+
+<h3 id="inject-dynamic-data-into-templates">Inject Dynamic Data into Templates</h3>
+
+<p>You can inject data before cloning the template’s content by manipulating the template clone. First, you would get a reference to the template, then use <code class="highlighter-rouge">document.importNode</code> to clone the template’s content. Next, change the target element within the template as desired and, finally, append the element to the page. For example</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;template&gt;
+	&lt;p&gt;Ducks are &lt;span class="adjective"&gt;&lt;/span&gt;!&lt;/p&gt;
+&lt;/template
+
+&lt;button onclick="copyTemplate()"&gt;Copy Template&lt;/button&gt;
+
+&lt;script&gt;
+	function copyTemplate() {
+		var template = document.querySelector('template');
+		var clone = document.importNode(template.content, true);
+		clone.querySelector('.adjective').textContent = 'awesome';
+		document.body.appendChild(clone);
+	}	
+&lt;/script&gt;	
+</code></pre>
+</div>
+
+<p>This code will append this paragraph to the page:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Ducks are awesome!
+</code></pre>
+</div>
+
+<h2 id="custom-elements">Custom Elements</h2>
+
+<p>Custom elements are a newish way of creating your own HTML tags and elements. They are part of web components but can be used on their own. There are a couple ways to implement them. You can either define your own HTML element (note that the name must have a dash -think of the first dash as a namespace) or extend existing elements by adding an ‘is’ attribute. For example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	&lt;input type="text" is="search"&gt;
+</code></pre>
+</div>
+
+<h3 id="register-and-use-custom-elements">Register and Use Custom Elements</h3>
+
+<p>Register and use custom element with a simple three step process:</p>
+
+<ol>
+  <li>
+    <p>Create a prototype for the custom element:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> var custom-element = Object.create(HTMLElement.prototype);
+ //Add properties and functions to prototype here
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<p>Note that when creating new custom elements with the <code class="highlighter-rouge">Object.create</code> method, the parameter that you pass in will usually be <code class="highlighter-rouge">HTMLElement.prototype</code> since custom elements are derived from a prototype. The exception is when you are extending an HTML element - in that case you would pass that element prototype in as an argument instead.</p>
+
+<ol>
+  <li>
+    <p>Register the element via the registerElement method:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>document.registerElement('custom-element');
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Use it: Add to DOM or place tag on the page</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> document.body.appendChild(new customElement());
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h3 id="instatiate-custom-elements">Instatiate Custom Elements</h3>
+
+<p>There are four different ways to instantiate a Custom Element</p>
+
+<ol>
+  <li>
+    <p>Create a tag in the markup</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> &lt;custom-comment /&gt;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>new Operator (You would need to append it to the DOM seperately)</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> var comment = new customComment();
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>createElement</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> var comment = document.createElement('custom-comment');
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>innerHTML</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> el.innerHTML = '&lt;custom-comment /&gt;;
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h2 id="shadow-dom">Shadow DOM</h2>
+
+<p>Finally, we get to the <strong>Shadow DOM!</strong> How exciting! A shadow DOM encapsulates DOM subtrees and styles.</p>
+
+<p>Before moving on, take a minute to open the settings in your browser Dev Tools. Under ‘Elements’, click on ‘Show user agent Shadow DOM’. This will allow you to see the Shadow DOM of native controls.</p>
+
+<p>And, before we move on together, let me introduce some vocabulary so we are sure we can be sure that we are speaking the same language.</p>
+
+<ul>
+  <li><strong>light DOM</strong> - the standard DOM - what you see on the page</li>
+  <li><strong>shadow DOM</strong> - hides away complexity</li>
+  <li><strong>logical DOM</strong>  - umbrella term that covers both light and shadow DOM</li>
+  <li><strong>shadow root</strong> - the root node of a shadow tree</li>
+  <li><strong>shadow host</strong> - the element in the light DOM that hosts the shadow DOM</li>
+  <li><strong>shadow boundry</strong> - 	encapsulates styling rules that are defined within a given piece of the shadow DOM (there are some ways to get around this.</li>
+</ul>
+
+<p>Got that? Great. Let’s create a Shadow DOM.</p>
+
+<h3 id="create-a-shadow-dom">Create a Shadow DOM</h3>
+
+<p>It’s another three step process:</p>
+
+<ol>
+  <li>Select a shadow host</li>
+  <li>Create a shadow root</li>
+  <li>
+    <p>Add elements (the same way that you append elements to the light DOM)</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> &lt;template&gt;
+     &lt;h1&gt;Hello world from the shadow DOM&lt;/h1&gt;
+ &lt;/template&gt;
+	
+ &lt;div id="host&gt;
+     &lt;script&gt;
+         var host = document.querySelector('template');
+         var root = host.createShadowRoot();
+         root.appendChild(document.importNode(template.content, true));
+     &lt;/script&gt;
+ &lt;/div&gt;
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<p>As the Shadow DOM encapsulates its own elements and their styles, rgular styling will not work on the shadow DOM. You can, however, define styles within the template tag that will only affect the shadow DOM.</p>
+
+<p>JavaScript, on the other hand, is not encapsulated in the Shadow DOM. Any Javascript that is defined within the tempate tag will still be traversed and manipulated with the light DOM and be attached to the window element. The markup inside the shadow DOM is still protected from JavaSript manipulation because it cannot be traversed with traditional selection methods. You can use IIFEs to encapsulate code.</p>
+
+<h3 id="shadow-dom-insertion-points-and-events">Shadow DOM Insertion Points and Events</h3>
+
+<ul>
+  <li>Content insertions points</li>
+  <li>Shadow insertion points</li>
+  <li>Event quirks</li>
+</ul>
+
+<h3 id="content-insertion-points">Content Insertion Points</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;content&gt;
+</code></pre>
+</div>
+
+<ul>
+  <li>Invite certain markup that is defined in the light DOM to render in the shadow DOM; invitation to elements from the light DOM to join shadow DOM</li>
+  <li>HTML elements are compositional</li>
+  <li>Use “select” attribute to declare a selector that specifies the type of content you’re looking for</li>
+  <li>A way to create a declarative API for shadow DOM</li>
+  <li>
+    <p>Empty tag invites anything that has not already been inserted</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  // Custom web component on page
+  &lt;comment-form&gt;
+      &lt;h1&gt; Tell us what's on your mind!&lt;/h1&gt;
+      &lt;p class="instructions"&gt; Fill out this form &lt;/p&gt;
+  &lt;/comment-form&gt;	
+  &lt;p class="footer"&gt;Privacy Policy&lt;/p&gt;
+	
+  Random Text // Will not show up because there is now content insertion point that matches this text. 
+	
+  // Template definitions
+  &lt;template&gt;
+      &lt;fieldset&gt;
+          &lt;legend&gt;
+              &lt;content select="h1"&gt;&lt;/content&gt;
+          &lt;/legend&gt;
+          &lt;content select="p.instructions"&gt;&lt;/content&gt;
+          &lt;br/&gt;
+			
+          &lt;input type="submit" value="Submit Comment"&gt;
+			
+          &lt;content select=".footer"&gt;&lt;/content&gt;
+
+      &lt;/fieldset&gt;
+  &lt;/template&gt;
+	
+	
+  //Script defines shadow DOM and invokes component
+  &lt;script&gt;
+      var commentProto = Object.create(HTMLElement.prototype);
+		
+      commentProto.createCallback = function() {
+          var template = document.querySelector('template');
+          var shadow = this.createShadowRoot();
+          shadow.appendChild(document.importNode(template.content, true));
+      }
+			
+      document.registerElement('comment-form', {
+          prototype: commentProto
+      });
+	
+  &lt;/script&gt;
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h3 id="insertion-points-vs-distributed-nodes">Insertion Points vs Distributed Nodes</h3>
+
+<ul>
+  <li>The content tag creates an <strong>insertion point</strong></li>
+  <li>Elements inserted at this point are <strong>distributed nodes</strong> (and they are merely displayed at the insertion point. <strong>They are not actually inserted.</strong></li>
+  <li>The content tag says “show this content from the light DOM here</li>
+  <li>The distributed node remains part of the light DOM</li>
+  <li>Any content distributed here cannot be traversed with traditional APIs</li>
+</ul>
+
+<h2 id="imports">Imports</h2>
+
+<p>This was actually a pretty brief intro, but if you look at any of the modern frontend frameworks, you’ll see some variation of web components being developed.</p>
+
+
+
+    <script id="dsq-count-scr" src="//reasonabout.disqus.com/count.js" async></script>
+
+    
+    <div id="disqus_thread"></div>
+      <script type="text/javascript">
+      var disqus_shortname = 'reasonabout';
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+  </div>
+</article>
+
+</body>
+
+
+</html>
