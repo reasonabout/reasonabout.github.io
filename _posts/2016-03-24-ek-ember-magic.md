@@ -9,7 +9,7 @@ categories: ember
 tags: ember, front-end, framework
 ---
 
-I started learning Ember about two weeks ago. It’s been an interesting process to figure out how the pieces work together and, in a lot of cases, what the pieces actually are. Today I’m going to focus on those individual pieces of an Ember project and how they work together. Spoiler: It is probably witchcraft that makes the Ember magic happen. That’s where I’m at right now.
+I started learning Ember about two weeks ago. It’s been an interesting process to figure out how the pieces work together and, in a lot of cases, what the pieces actually are. In this post, I am going to focus on those individual pieces of an Ember project and how they work together. Spoiler: It is probably witchcraft that makes the Ember magic happen. That’s where I’m at right now.
 
 First, let me just say that Ember is a simple, straight-forward, intuitive MVC that is easy for beginners to jump right into.
 
