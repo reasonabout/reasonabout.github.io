@@ -5,9 +5,128 @@
     <description>Fresh insights and information from a group of full stack students (and their instructors)</description>
     <link>http://reasonabout.co/</link>
     <atom:link href="http://reasonabout.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 Mar 2016 22:48:34 -0600</pubDate>
-    <lastBuildDate>Sun, 20 Mar 2016 22:48:34 -0600</lastBuildDate>
+    <pubDate>Wed, 23 Mar 2016 14:38:24 -0600</pubDate>
+    <lastBuildDate>Wed, 23 Mar 2016 14:38:24 -0600</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>Ember Magic</title>
+        <description>&lt;p&gt;I started learning Ember about two weeks ago. It’s been an interesting process to figure out how the pieces work together and, in a lot of cases, what the pieces actually are. Today I’m going to focus on those individual pieces of an Ember project and how they work together. Spoiler: It is probably witchcraft that makes the Ember magic happen. That’s where I’m at right now.&lt;/p&gt;
+
+&lt;p&gt;First, let me just say that Ember is a simple, straight-forward, intuitive MVC that is easy for beginners to jump right into.&lt;/p&gt;
+
+&lt;p&gt;…&lt;/p&gt;
+
+&lt;p&gt;Just kidding. That is a ridiculous lie.&lt;/p&gt;
+
+&lt;h2 id=&quot;ember-is-more-like-an-mvrrsabqpxyz&quot;&gt;Ember is more like an MVRRSABQPXYZ&lt;/h2&gt;
+
+&lt;p&gt;For a beginner, Ember can seem overwhelming. There is a lot going on in an Ember project and for the better part of the last two weeks, I’ve been trying to make sense of it.&lt;/p&gt;
+
+&lt;p&gt;Really quickly, I want to give you little more background on where I’m coming from. I’m fairly new to MVCs in general. I’ve built something with Angular, but prior to this Ember adventure I hadn’t really worked with a front-end framework in a way that it was intended. I didn’t separate all of the pieces and Angular let me get away with that. Ember is less forgiving.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/03/ember-magic/MVRRSABQPXYZ.png&quot; alt=&quot;Ember is crazy!&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s not dwell on my personal confusion. Let’s look at an Ember project. If you go to &lt;a href=&quot;https://emberjs.com&quot;&gt;emberjs.com&lt;/a&gt; you will see this at the top of the page and here, I want to point out just how easy it is to get started with Ember. That’s how they get you.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/03/ember-magic/ember-cli.png&quot; alt=&quot;Getting Started with Ember&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The first line installs Ember CLI. Ember CLI is a command line interface that helps you work with your Ember project more efficiently. As you start using it, you will quickly get in the habit of generating and destroying parts of your app from the command line rather than from within your app. That was a fairly new workflow for me and it’s definitely something I appreciate about Ember.&lt;/p&gt;
+
+&lt;p&gt;The second line uses Ember CLI to generate an Ember project. What does that project look like?&lt;/p&gt;
+
+&lt;p&gt;It looks like this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/03/ember-magic/generated-ember.png&quot; alt=&quot;Getting Started with Ember&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a lot going on here, but if you look closely, you can see that MVC! Just, don’t get too comfortable, because there are a couple things you should be conscious of:&lt;/p&gt;
+
+&lt;p&gt;First, there is a lot more going on here than those three things. Ember is a delicate, integrated ecosystem and those other things are not superfluous. The are necessary.&lt;/p&gt;
+
+&lt;p&gt;Second, Ember is currently undergoing a major evolution and the core pieces of architecture are changing, albeit for the better, but they are changing. The pieces are getting to be more streamlined. For one, controllers are going away and while they’re still here in the standard scaffolding, you don’t even have to use them at this point… but I will get to that. For now, just know that this is your starting point.&lt;/p&gt;
+
+&lt;p&gt;Now, I want to focus on what Ember should look like. I got the fantastic diagram below from a very useful &lt;a href=&quot;http://emberigniter.com/5-essential-ember-2.0-concepts/&quot;&gt;post on Ember Igniter&lt;/a&gt; and I’m going to use it as a reference for the rest of this talk.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/03/ember-magic/core-concepts.png&quot; alt=&quot;Getting Started with Ember&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Before we go through each piece of it, I want you to notice a couple things.&lt;/p&gt;
+
+&lt;p&gt;One, the router and routes the dominate the scene. Routing is an important part of a single page application. This is going to make sense in a second.&lt;/p&gt;
+
+&lt;p&gt;Two, you may see that there is an alarming lack of controllers and views in this picture. Instead you see these shady looking components at the bottom. I’ll get to those in the next few slides, but for now, know that components are replacing controllers and views in Ember.&lt;/p&gt;
+
+&lt;h2 id=&quot;ember-routing&quot;&gt;Ember Routing&lt;/h2&gt;
+
+&lt;p&gt;Let’s start from the top of the graphic and look at the router. The router manages the application state and if you consider what that means, it makes sense that it seems so important in this diagram. An Ember app is a single page application and that means that it is URL driven. The URL informs the router and lets it know which route to load, which in turn loads the model and renders the template, which for the time being, brings in the components. That’s an important job!&lt;/p&gt;
+
+&lt;p&gt;Here is what a router might look like…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/03/ember-magic/router-example.png&quot; alt=&quot;Getting Started with Ember&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can see that I’m passing route names into the route definitions and I’m generally omitting the paths because Ember is smart enough to route to a URL with the same name. However, in some instances, like where I’m using a dynamic segment in my URL, I’m letting the router know which path to connect with which route.&lt;/p&gt;
+
+&lt;p&gt;These routes that I’m referencing in the router are files that contain logic that can do a few different things. They can render a template, they can load a model that is then available to the template, they can redirect to a new route, or they can handle actions that involve changing a model or transitioning to a new route.&lt;/p&gt;
+
+&lt;p&gt;That last thing has been a little confusing to me. If a route can handle some actions, why not put all of them in there? And if I’m not using controllers, why can’t I just put all of the controller logic into the route. I believe the answer to this is that you could, but it would be wrong. The right way to handle this is with components, which I’ll get to very soon.&lt;/p&gt;
+
+&lt;p&gt;And let’s pause on one other important thing before we move on. Let’s go back to that second item in the list of what route handlers can do. They can load models that are then available to the template. How do they do that?&lt;/p&gt;
+
+&lt;h2 id=&quot;the-model-hook&quot;&gt;The Model Hook&lt;/h2&gt;
+
+&lt;p&gt;Routes have a model hook, which is just a function called ‘model’ that loads the model (and exisitng records) and makes them available to the view. Here is what a route file might look like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/03/ember-magic/route-example.png&quot; alt=&quot;Getting Started with Ember&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In this example, I’m using Ember Data, which is a library that handles data on the client side of the application.&lt;/p&gt;
+
+&lt;p&gt;which is using the store service to populate the model, but again, I’m assuming the behind-the-scenes part of this requires frog legs and the eye of newt. The point is this is where you say the magic words and you have access to your model.&lt;/p&gt;
+
+&lt;h2 id=&quot;moving-on-to-models&quot;&gt;Moving on to Models&lt;/h2&gt;
+
+&lt;p&gt;So models. Models are objects that represent the underlying data that your application presents to the user. Being a relatively new developer, I had trouble understanding why you even need models. Why can’t you just get data and send data and figure what to do with it when it got to where it was going? But after spending some time with the framework it started to make sense.&lt;/p&gt;
+
+&lt;p&gt;Here is what an Ember model might look like.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/03/ember-magic/model-example.png&quot; alt=&quot;Getting Started with Ember&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can see that this story model is an object. It has properties and when I get data from my database my model is going to expect that data to have properties that line up with these. I can also use models to define relationships and that will make life a lot easier when I access these records in my view. So that is a model.&lt;/p&gt;
+
+&lt;p&gt;Next, we have components.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/03/ember-magic/generate-component.png&quot; alt=&quot;Getting Started with Ember&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Components are Like standard Web Components. If you don’t know what those are, they are essentially self-contained, reusable widgets. In Ember these components are made up of a controller (which defines the component’s behavior) and a view (which defines the component’s UI) and, for the time being, these components cannot be routed to directly, so are referenced in templates. Very soon, Ember will make it possible for the router to route directly to components and then we’ll have nice neat nested components.&lt;/p&gt;
+
+&lt;h2 id=&quot;finally-services&quot;&gt;Finally, services!&lt;/h2&gt;
+
+&lt;p&gt;I will just briefly touch on services. These are long-lived Ember objects, meaning that they are &lt;a href=&quot;https://en.wikipedia.org/wiki/Singleton_pattern&quot;&gt;singletons&lt;/a&gt; that can be made available in different parts of your application. They are useful for features that require shared state or persistent connections like authentication, geolocation, web sockets, and a number of other things.&lt;/p&gt;
+
+&lt;p&gt;Remember a couple paragraphs back when I was talking about models and accessing those models with the model route in the hook? Remember when I brought up Ember Data like it was no big deal? Well, Ember Data uses a service called ‘store’ to give you access to your models at a various points in your application. Services are great.&lt;/p&gt;
+
+&lt;h2 id=&quot;but-how-does-the-magic-work&quot;&gt;But how does the magic work?&lt;/h2&gt;
+
+&lt;p&gt;Now you have a general idea about the parts that make up an Ember project, but I haven’t really covered the magic yet. How does it all work together? Honestly, it probably takes well over two weeks to understand all these interactions and I’m not there yet. At this point, this is what I know: A lot of these things are abstracted.&lt;/p&gt;
+
+&lt;p&gt;For example, sending a POST request to an API involves an action inside of a component, a model, a route, a serializer, an adapter and the whole thing is catalyzed with Ember Data’s &lt;code class=&quot;highlighter-rouge&quot;&gt;send()&lt;/code&gt; method. You just tell it to send data and poof, you send data somewhere. I learned over the course of a few days, that if you don’t understand how that magical method works that you may waste some huge number of hours trying to figure why it isn’t working the way you expect it to.&lt;/p&gt;
+
+&lt;p&gt;But this is my life now.&lt;/p&gt;
+
+&lt;p&gt;The point is, that bit by bit, you do uncover Ember’s magic and as you do, you can let Ember do its thing. Eventually this makes building apps a lot easier than the alternative. The strict separation of concerns makes sure that the right pieces go into the right places and that really does give you the ability to build more ambitious apps without worrying about scalability.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 23 Mar 2016 00:00:00 -0600</pubDate>
+        <link>http://reasonabout.co/ember/2016/03/23/ek-ember-magic.html</link>
+        <guid isPermaLink="true">http://reasonabout.co/ember/2016/03/23/ek-ember-magic.html</guid>
+        
+        <category>ember,</category>
+        
+        <category>front-end,</category>
+        
+        <category>framework</category>
+        
+        
+        <category>ember</category>
+        
+      </item>
     
       <item>
         <title>Web Components are Neat</title>
