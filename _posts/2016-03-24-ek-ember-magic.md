@@ -43,7 +43,7 @@ First, there is a lot more going on here than those three things. Ember is a del
 
 Second, Ember is currently undergoing a major evolution and the core pieces of architecture are changing, albeit for the better, but they are changing. The pieces are getting to be more streamlined. For one, controllers are going away and while they’re still here in the standard scaffolding, you don’t even have to use them at this point… but I will get to that. For now, just know that this is your starting point.
 
-Now, I want to focus on what Ember should look like. I got the fantastic diagram below from a very useful [post on Ember Igniter](http://emberigniter.com/5-essential-ember-2.0-concepts/) and I’m going to use it as a reference for the rest of this talk.
+Now, I want to focus on what Ember should look like. I got the fantastic diagram below from a very useful [post on Ember Igniter](http://emberigniter.com/5-essential-ember-2.0-concepts/) and I’m going to use it as a reference for the rest of this post.
 
 ![Getting Started with Ember](/assets/ek/2016/03/ember-magic/core-concepts.png)
 
