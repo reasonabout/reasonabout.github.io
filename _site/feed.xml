@@ -5,9 +5,80 @@
     <description>Fresh insights and information from a group of full stack students (and their instructors)</description>
     <link>http://reasonabout.co/</link>
     <atom:link href="http://reasonabout.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 Apr 2016 14:37:41 -0600</pubDate>
-    <lastBuildDate>Fri, 01 Apr 2016 14:37:41 -0600</lastBuildDate>
+    <pubDate>Thu, 21 Apr 2016 06:40:36 -0600</pubDate>
+    <lastBuildDate>Thu, 21 Apr 2016 06:40:36 -0600</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>Impostor Syndrome</title>
+        <description>&lt;p&gt;I started my first job as a web developer recently, and I feel compelled to share
+the lessons I’ve learned throughout my glorious week-long career.&lt;/p&gt;
+
+&lt;h1 id=&quot;impostor-syndrome&quot;&gt;Impostor Syndrome&lt;/h1&gt;
+
+&lt;p&gt;I finally made it. I’m seated at the big kid’s table. I’m one of them. I worked hard and it paid off. Now for the hard part: trick everyone into believing that I actually belong there.&lt;/p&gt;
+
+&lt;h2 id=&quot;beginners-mind&quot;&gt;Beginner’s Mind&lt;/h2&gt;
+
+&lt;p&gt;Let’s face it. I don’t know anything. I shouldn’t feel bad, but I do. I could go on and on about all the things I don’t know, but instead I’ll provide you with this handy reference for things I’ve learned that I should and shouldn’t pretend to know when starting a brand new career in web development.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Don’t pretend you like a language that you don’t.&lt;/li&gt;
+  &lt;li&gt;Pretend to understand how &lt;em&gt;git&lt;/em&gt; works. (Everyone else does)&lt;/li&gt;
+  &lt;li&gt;Don’t pretend you know how to use &lt;em&gt;vim&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Pretend you believe that the person sitting next to you knows how to use &lt;em&gt;vim&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Don’t pretend you’d be capable of &lt;strong&gt;Anything&lt;/strong&gt; without &lt;em&gt;stackoverflow&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Pretend you know how to turn on the light in the bathroom.&lt;/li&gt;
+  &lt;li&gt;Pretend you don’t know who people heard crying in the bathroom earlier.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Don’t pretend you know the guy that wrote _&lt;/td&gt;
+          &lt;td&gt;name of obscure framework goes here&lt;/td&gt;
+          &lt;td&gt;_.&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Pretend that FP is better than OOP.&lt;/li&gt;
+  &lt;li&gt;Pretend that OOP is better than FP.&lt;/li&gt;
+  &lt;li&gt;Don’t pretend you’ll survive without your mechanical keyboard.&lt;/li&gt;
+  &lt;li&gt;Pretend there was never a time you forgot to wear pants.&lt;/li&gt;
+  &lt;li&gt;Don’t pretend the terrible code you wrote isn’t terrible.&lt;/li&gt;
+  &lt;li&gt;Don’t pretend the terrible test you wrote effectively tests the terrible code you wrote.&lt;/li&gt;
+  &lt;li&gt;Pretend your code will start working if you just close your eyes and wish really hard. (I mean - really, &lt;em&gt;really&lt;/em&gt; hard)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;overcoming-impostor-syndrome&quot;&gt;Overcoming Impostor Syndrome&lt;/h2&gt;
+
+&lt;p&gt;Go luck with that.&lt;/p&gt;
+
+&lt;h2 id=&quot;learning-to-live-with-impostor-syndrome&quot;&gt;Learning to Live with Impostor Syndrome&lt;/h2&gt;
+
+&lt;p&gt;There may never be a time in the rest of my career that I will stop feeling like an impostor. With that in mind, I have prepared a few things I like to keep in mind as I continue to fail upwards.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;I’m the only impostor at my office. Everyone knows it. For some reason people don’t seem to mind.&lt;/li&gt;
+  &lt;li&gt;I can’t speak intelligently about any subject, but my co-workers pretend to value my input.&lt;/li&gt;
+  &lt;li&gt;I exclusively write terrible code, but my co-workers seem more interested in building on top of it rather than blaming me for breaking things.&lt;/li&gt;
+  &lt;li&gt;I can’t stop my co-workers from pretending that there could be anything I have more experience in than they do.&lt;/li&gt;
+  &lt;li&gt;I can’t stop my boss from feeling like I’ll be useful one day.&lt;/li&gt;
+  &lt;li&gt;I can’t stop myself from feeling like an impostor.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;By &lt;a href=&quot;https://www.github.com/skuttleman&quot;&gt;Ben Allred&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 21 Apr 2016 00:00:00 -0600</pubDate>
+        <link>http://reasonabout.co/general/2016/04/21/bda-impostor-syndrome.html</link>
+        <guid isPermaLink="true">http://reasonabout.co/general/2016/04/21/bda-impostor-syndrome.html</guid>
+        
+        <category></category>
+        
+        
+        <category>general</category>
+        
+      </item>
     
       <item>
         <title>Ember Magic</title>
@@ -936,31 +1007,6 @@ Here is a simple, step-by-step instructional guide on how to deploy a front-end 
         
         
         <category>jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>Welcome</title>
-        <description>&lt;p&gt;Welcome to Reason About. This is a blog that brings fresh insights and information from about 30 new and continually learning web developers together in one space. Specifically, we are a group of soon-to-graduate full stack bootcamp students and instructors. More specifically, we are Galvanizers.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-galvanize&quot;&gt;What is Galvanize?&lt;/h2&gt;
-
-&lt;p&gt;In part, it’s a web dev bootcamp. There are many of them. Across the world these types of programs are releasing waves of developers into the wild every day. What makes us different is the entrepreneurial ecosystem that we learn in. We share a building with hundreds of startups at various stages in their growth and, by design, many of our learning experiences happen outside of our classroom.&lt;/p&gt;
-
-&lt;h2 id=&quot;we-are-curious&quot;&gt;We are Curious&lt;/h2&gt;
-
-&lt;p&gt;We are going through a primarily JavaScript based curriculum in our class, but we are curious and we find ourselves learning a lot of things that aren’t on the agenda. We will be using this space to share the discoveries that come from our classroom, the rabbit-holes we wander into and the other interesting parts of our lives.&lt;/p&gt;
-
-&lt;p&gt;Please join us as we learn, teach and grow together.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 27 Jan 2016 00:00:00 -0700</pubDate>
-        <link>http://reasonabout.co/meta/2016/01/27/ek-welcome-to-reason-about.html</link>
-        <guid isPermaLink="true">http://reasonabout.co/meta/2016/01/27/ek-welcome-to-reason-about.html</guid>
-        
-        <category>Galvanize</category>
-        
-        
-        <category>meta</category>
         
       </item>
     
