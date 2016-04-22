@@ -5,8 +5,8 @@
     <description>Fresh insights and information from a group of full stack students (and their instructors)</description>
     <link>http://reasonabout.co/</link>
     <atom:link href="http://reasonabout.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 Apr 2016 05:22:36 -0600</pubDate>
-    <lastBuildDate>Fri, 22 Apr 2016 05:22:36 -0600</lastBuildDate>
+    <pubDate>Fri, 22 Apr 2016 05:35:37 -0600</pubDate>
+    <lastBuildDate>Fri, 22 Apr 2016 05:35:37 -0600</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
@@ -14,9 +14,9 @@
         <description>&lt;p&gt;I started my first job as a web developer recently, and I feel compelled to share
 the lessons I’ve learned throughout my glorious week-long career.&lt;/p&gt;
 
-&lt;h1 id=&quot;impostor-syndrome&quot;&gt;Impostor Syndrome&lt;/h1&gt;
+&lt;h2 id=&quot;big-kids-table&quot;&gt;Big Kid’s Table&lt;/h2&gt;
 
-&lt;p&gt;I finally made it. I’m seated at the big kid’s table. I’m one of them. I worked hard and it paid off. Now for the hard part: trick everyone into believing that I actually belong there.&lt;/p&gt;
+&lt;p&gt;I finally made it. I’m seated at the big kid’s table. I’m one of them. I worked hard and it paid off. Now for the hard part: trick everyone into believing that I actually belong here.&lt;/p&gt;
 
 &lt;h2 id=&quot;beginners-mind&quot;&gt;Beginner’s Mind&lt;/h2&gt;
 
@@ -30,7 +30,7 @@ the lessons I’ve learned throughout my glorious week-long career.&lt;/p&gt;
   &lt;li&gt;Don’t pretend you’d be capable of &lt;strong&gt;anything&lt;/strong&gt; without &lt;em&gt;stackoverflow&lt;/em&gt;.&lt;/li&gt;
   &lt;li&gt;Pretend you know how to turn on the light in the bathroom.&lt;/li&gt;
   &lt;li&gt;Pretend you don’t know who people heard crying in the bathroom earlier.&lt;/li&gt;
-  &lt;li&gt;Don’t pretend you know the guy that wrote (&lt;em&gt;name of obscure framework goes here&lt;/em&gt;).&lt;/li&gt;
+  &lt;li&gt;Don’t pretend you know the guy that wrote [&lt;em&gt;name of obscure framework goes here&lt;/em&gt;].&lt;/li&gt;
   &lt;li&gt;Pretend that FP is better than OOP.&lt;/li&gt;
   &lt;li&gt;Pretend that OOP is better than FP.&lt;/li&gt;
   &lt;li&gt;Don’t pretend you’ll survive without your mechanical keyboard.&lt;/li&gt;
@@ -46,7 +46,7 @@ the lessons I’ve learned throughout my glorious week-long career.&lt;/p&gt;
 
 &lt;h2 id=&quot;learning-to-live-with-impostor-syndrome&quot;&gt;Learning to Live with Impostor Syndrome&lt;/h2&gt;
 
-&lt;p&gt;There may never be a time in the rest of my career that I will stop feeling like an impostor. With that in mind, I have prepared a few things I like to keep in mind as I continue to fail upwards.&lt;/p&gt;
+&lt;p&gt;There may never be a time throughout the rest of my career that I will stop feeling like an impostor. With that in mind, I have outlined a few things I like to keep in mind as I continue to fail upwards.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;I’m the only impostor at my office. Everyone knows it. For some reason people don’t seem to mind.&lt;/li&gt;
