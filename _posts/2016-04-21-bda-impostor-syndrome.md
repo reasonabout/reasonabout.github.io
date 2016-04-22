@@ -11,22 +11,22 @@ tags: ['']
 I started my first job as a web developer recently, and I feel compelled to share
 the lessons I've learned throughout my glorious week-long career.
 
-# Impostor Syndrome
+## Big Kid's Table
 
-I finally made it. I'm seated at the big kid's table. I'm one of them. I worked hard and it paid off. Now for the hard part: trick everyone into believing that I actually belong there.
+I finally made it. I'm seated at the big kid's table. I'm one of them. I worked hard and it paid off. Now for the hard part: trick everyone into believing that I actually belong here.
 
 ## Beginner's Mind
 
 Let's face it. I don't know anything. I shouldn't feel bad, but I do. I could go on and on about all the things I don't know, but instead I'll provide you with this handy reference for things I've learned that I should and shouldn't pretend to know when starting a brand new career in web development.
 
 1. Don't pretend you like a language that you don't.
-1. Pretend to understand how _git_ works. (Everyone else does)
+1. Pretend you understand how _git_ works. (everyone else does)
 1. Don't pretend you know how to use _vim_.
 1. Pretend you believe that the person sitting next to you knows how to use _vim_.
-1. Don't pretend you'd be capable of **Anything** without _stackoverflow_.
+1. Don't pretend you'd be capable of **anything** without _stackoverflow_.
 1. Pretend you know how to turn on the light in the bathroom.
 1. Pretend you don't know who people heard crying in the bathroom earlier.
-1. Don't pretend you know the guy that wrote _|name of obscure framework goes here|_.
+1. Don't pretend you know the guy that wrote [_name of obscure framework goes here_].
 1. Pretend that FP is better than OOP.
 1. Pretend that OOP is better than FP.
 1. Don't pretend you'll survive without your mechanical keyboard.
@@ -37,11 +37,11 @@ Let's face it. I don't know anything. I shouldn't feel bad, but I do. I could go
 
 ## Overcoming Impostor Syndrome
 
-Go luck with that.
+Good luck with that.
 
 ## Learning to Live with Impostor Syndrome
 
-There may never be a time in the rest of my career that I will stop feeling like an impostor. With that in mind, I have prepared a few things I like to keep in mind as I continue to fail upwards.
+There may never be a time throughout the rest of my career that I will stop feeling like an impostor. With that in mind, I have outlined a few things I like to keep in mind as I continue to fail upwards.
 
 1. I'm the only impostor at my office. Everyone knows it. For some reason people don't seem to mind.
 1. I can't speak intelligently about any subject, but my co-workers pretend to value my input.
