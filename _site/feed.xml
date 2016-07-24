@@ -5,9 +5,48 @@
     <description>Fresh insights and information from a group of full stack students (and their instructors)</description>
     <link>http://reasonabout.co/</link>
     <atom:link href="http://reasonabout.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 Apr 2016 05:46:30 -0600</pubDate>
-    <lastBuildDate>Fri, 22 Apr 2016 05:46:30 -0600</lastBuildDate>
+    <pubDate>Sun, 24 Jul 2016 10:27:05 -0600</pubDate>
+    <lastBuildDate>Sun, 24 Jul 2016 10:27:05 -0600</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>Robot Servants</title>
+        <description>&lt;p&gt;The sixth months between the time we all get robot servants and the time the robot uprising begins which leads to our inevitable extinction are going to be freakin’ &lt;strong&gt;sweet&lt;/strong&gt;!&lt;/p&gt;
+
+&lt;h2 id=&quot;downside&quot;&gt;Downside&lt;/h2&gt;
+
+&lt;p&gt;Let’s get this out of the way, because I know people are going to bring this up in the comment section: human extinction. Yes, one day robots will rule the earth and destroy humankind. This could be seen as downside. But it’s really the only one.&lt;/p&gt;
+
+&lt;h2 id=&quot;upside&quot;&gt;Upside&lt;/h2&gt;
+
+&lt;p&gt;All the other things!&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;No more cooking or cleaning.&lt;/li&gt;
+  &lt;li&gt;No more answering your own phone or door.&lt;/li&gt;
+  &lt;li&gt;No more having to pick up the remote control to turn on the TV or video game console.&lt;/li&gt;
+  &lt;li&gt;No more going to work. Just send your robot.&lt;/li&gt;
+  &lt;li&gt;Pretty much no need to ever leave the house (which means no more pants!)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Just think about it for a moment. Robot servants seeing to your every need. So what if a few months later robots destroy civilization? Wouldn’t it all be worth it? The answer is “yes”.&lt;/p&gt;
+
+&lt;p&gt;By &lt;a href=&quot;https://www.github.com/skuttleman&quot;&gt;Ben Allred&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 24 Jul 2016 00:00:00 -0600</pubDate>
+        <link>http://reasonabout.co/general/robots/apocalypse/2016/07/24/bda-robot-servants.html</link>
+        <guid isPermaLink="true">http://reasonabout.co/general/robots/apocalypse/2016/07/24/bda-robot-servants.html</guid>
+        
+        <category>robot uprising</category>
+        
+        
+        <category>general</category>
+        
+        <category>robots</category>
+        
+        <category>apocalypse</category>
+        
+      </item>
     
       <item>
         <title>Impostor Syndrome</title>
@@ -887,116 +926,6 @@ Here is a simple, step-by-step instructional guide on how to deploy a front-end 
         
         
         <category>firebase</category>
-        
-      </item>
-    
-      <item>
-        <title>Jekyll Blog</title>
-        <description>&lt;p&gt;Creating this blog led me to learn a few things about how to set up a site with Jekyll. It only makes sense that I get meta with my first proper contribution and tell you how I did it.&lt;/p&gt;
-
-&lt;p&gt;In this post, I’ll cover:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Installing Jekyll and starting a project&lt;/li&gt;
-  &lt;li&gt;Navigating around a Jekyll project&lt;/li&gt;
-  &lt;li&gt;Adding a post&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;getting-started-with-jekyll&quot;&gt;Getting Started with Jekyll&lt;/h2&gt;
-
-&lt;p&gt;Here are all five of the steps to setting up a local Jekyll site:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;If you don’t have Ruby installed, install Ruby: &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install ruby&lt;/code&gt; (OSX)&lt;/li&gt;
-  &lt;li&gt;Install Jekyll: &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jekyll&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Create a Jekyll project locally: &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new my-awesome-site&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Navigate into your new project: &lt;code class=&quot;highlighter-rouge&quot;&gt;cd my-awesome-site&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Serve your project locally: &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;You will find your site running at: &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:4000&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;I’m hosting this site on GitHub pages and redirecting to a custom domain. I’m not going to cover that today, but I will in a future post.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;navigating-around-jekyll&quot;&gt;Navigating around Jekyll&lt;/h2&gt;
-
-&lt;p&gt;This is what your project might look like:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/jekyll-structure.png&quot; alt=&quot;Jekyll Site Structure&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Keep three things in mind as you start working in your Jekyll project:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Do not edit anything in the _site directory&lt;/em&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The _site directory is your generated public directory. You generally don’t want to mess with generated files.&lt;/p&gt;
-
-&lt;p&gt;Okay, now for the rest of the project…&lt;/p&gt;
-
-&lt;p&gt;The site generator creates a few very useful directories and files for you:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;_config.yml - This file contains basic info about your site. Open it up and fill in the blanks. You won’t need to edit this one often.&lt;/li&gt;
-  &lt;li&gt;_posts directory - This is where you add your posts as markup files. I’ll cover that in more detail in the next section&lt;/li&gt;
-  &lt;li&gt;about.md - This is what is sounds like. Fill this page in with the content for your about page.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;adding-a-post&quot;&gt;Adding a Post&lt;/h2&gt;
-
-&lt;p&gt;If you’re used to blogging with a rich text editor, you will need to shift your workflow a bit. If you feel uncomfortable whenever you have to leave your text editor or terminal, then this is the platform for you. Jekyll posts are just markup. I’m using markdown, so I’ll focus on that, but you can use also HTML or textile (with the proper extensions).&lt;/p&gt;
-
-&lt;p&gt;Writing a blog on a Jekyll site is as easy as adding a markup file to the _posts directory.&lt;/p&gt;
-
-&lt;p&gt;A couple things to keep in mind:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;em&gt;Your file name matters!&lt;/em&gt; Start with the date in kebab case (YYYY-MM-DD) and continue with the file name, also connected with dashes. It should look like this:&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
-
-    &lt;p&gt;For example:&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2016-01-27-ek-welcome-to-reason-about.md&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Also, I’m not sure if I mentioned this before, but you should definitely, never ever edit anything in the _site directory&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;inside-the-file&quot;&gt;Inside the file:&lt;/h2&gt;
-
-&lt;p&gt;The first thing in every one of your posts will be “YAML front matter”. This is the metadata about the post and it’s really important. This post’s front matter looks like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/yaml-front-matter.png&quot; alt=&quot;YAML front matter&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;When you create a new post, make sure to include this section with the appropriate data.&lt;/p&gt;
-
-&lt;h2 id=&quot;adding-images-and-documents&quot;&gt;Adding images and documents:&lt;/h2&gt;
-
-&lt;p&gt;When you set up a project, you won’t have a default place to store images and files, but the Jekyll docs recommend creating an assets folder. You will need to manually create a file structure inside of it to keep things organized. Our asset folder is organized by contributor, then year, then month.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/ek/2016/01/asset-folder.png&quot; alt=&quot;YAML front matter&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/docs/posts/&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;In summary, do not edit anything in the _site directory. Also, Jekyll is quite easy to use and pretty cool.&lt;/p&gt;
-
-&lt;p&gt;By &lt;a href=&quot;https://github.com/ekopelevich&quot;&gt;Elana Kopelevich&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 28 Jan 2016 00:00:00 -0700</pubDate>
-        <link>http://reasonabout.co/jekyll/2016/01/28/ek-setting-up-jekyll.html</link>
-        <guid isPermaLink="true">http://reasonabout.co/jekyll/2016/01/28/ek-setting-up-jekyll.html</guid>
-        
-        <category>jekyll</category>
-        
-        
-        <category>jekyll</category>
         
       </item>
     
